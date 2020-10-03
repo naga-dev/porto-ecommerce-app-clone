@@ -7,8 +7,14 @@ import Banner from "../assets/images/banner1.jpg";
 const HomeLanding = () => {
   return (
     <div className="home-banner-wrapper">
-      <div className="content">
-        <img src={Banner} alt="banner" />
+      <div
+        className="content"
+        style={{
+          backgroundImage: `url(${Banner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "top center",
+        }}
+      >
         <div className="content-text d-flex flex-column">
           <h3>get up to 30% off</h3>
           <h1>on jackets</h1>
