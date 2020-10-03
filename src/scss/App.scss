@@ -1,0 +1,40 @@
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;1,400&display=swap");
+
+// Reset some elements
+:root {
+  font-size: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  height: 5000px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Helpers
+@import "./helpers/classes.scss";
+
+// Helpers
+@import "./helpers/variables.scss";
+
+// Components
+@import "./components/Navbar.scss";

@@ -1,0 +1,30 @@
+// App custom classes
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+// Flexbox
+.d-flex {
+  display: flex;
+}
+.align-center {
+  @extend .d-flex;
+  align-items: center;
+}
+.justify-center {
+  @extend .d-flex;
+  justify-content: center;
+}
+.justify-between {
+  @extend .d-flex;
+  justify-content: space-between;
+}
+.justify-around {
+  @extend .d-flex;
+  justify-content: space-around;
+}
+.flex-column {
+  @extend .d-flex;
+  flex-direction: column;
+}

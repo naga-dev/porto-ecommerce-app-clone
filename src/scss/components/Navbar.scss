@@ -1,0 +1,80 @@
+.app-navbar-wrapper {
+  padding: 30px 40px;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  .app-logo {
+    img {
+      width: 100px;
+      height: auto;
+    }
+  }
+
+  .navigator-wrapper {
+    width: 60%;
+    margin-right: auto;
+    margin-left: 60px;
+
+    li {
+      margin-right: 25px;
+
+      a {
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: #000;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .toggle-side-menu-icon {
+    display: none;
+    width: 100%;
+
+    svg {
+      width: 20px;
+    }
+  }
+
+  .left-side-wrapper {
+    li {
+      margin-left: 30px;
+      position: relative;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .count {
+        position: absolute;
+        top: -13px;
+        right: -5px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: red;
+        color: #fff;
+        text-align: center;
+        line-height: 15px;
+        font-size: 11px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// Media Query
+@media screen and (max-width: $md) {
+  .navigator-wrapper {
+    display: none !important;
+  }
+
+  .toggle-side-menu-icon {
+    display: flex !important;
+    justify-content: flex-end;
+  }
+}
