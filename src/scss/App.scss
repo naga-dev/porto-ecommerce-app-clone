@@ -23,10 +23,10 @@ ul {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 
   &:hover {
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
 
@@ -39,3 +39,4 @@ a {
 // Components
 @import "./components/Navbar.scss";
 @import "./components/HomeLanding.scss";
+@import "./components/ShopByCategories.scss";

@@ -1,0 +1,27 @@
+.shop-by-categories-wrapper {
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+
+  .shop-by-categories-item {
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .content {
+      margin-top: 20px;
+      h4 {
+        text-transform: uppercase;
+        color: #545151;
+        margin-bottom: 10px;
+      }
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+}
