@@ -32,6 +32,7 @@ a {
 
 // Helpers
 @import "./helpers/classes.scss";
+@import "./helpers/mxin.scss";
 
 // Helpers
 @import "./helpers/variables.scss";
@@ -40,3 +41,4 @@ a {
 @import "./components/Navbar.scss";
 @import "./components/HomeLanding.scss";
 @import "./components/ShopByCategories.scss";
+@import "./components/ProducItem.scss";

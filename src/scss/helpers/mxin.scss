@@ -1,0 +1,7 @@
+@mixin customSpan($bg, $color, $fontSize, $width, $height) {
+  background-color: $bg;
+  color: $color;
+  font-size: $fontSize;
+  width: $width;
+  height: $height;
+}

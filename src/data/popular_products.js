@@ -7,7 +7,7 @@ const POPULAR_PRODUCTS = [
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
     isHot: false,
-    isDiscount: -30,
+    isDiscount: false,
   },
   {
     id: 2,
@@ -15,9 +15,9 @@ const POPULAR_PRODUCTS = [
     productName: "ideapad",
     price: 240,
     imgUrl:
-      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-99-300x300.jpg",
     isHot: false,
-    isDiscount: -30,
+    isDiscount: false,
   },
   {
     id: 3,
@@ -25,9 +25,9 @@ const POPULAR_PRODUCTS = [
     productName: "ideapad",
     price: 240,
     imgUrl:
-      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/product-21-300x300.jpg",
     isHot: false,
-    isDiscount: -30,
+    isDiscount: false,
   },
   {
     id: 4,
@@ -35,9 +35,9 @@ const POPULAR_PRODUCTS = [
     productName: "ideapad",
     price: 240,
     imgUrl:
-      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-9-2-grey-300x300.jpg",
     isHot: false,
-    isDiscount: -30,
+    isDiscount: false,
   },
   {
     id: 5,
@@ -45,9 +45,9 @@ const POPULAR_PRODUCTS = [
     productName: "ideapad",
     price: 240,
     imgUrl:
-      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/product-89-2-300x300.jpg",
     isHot: false,
-    isDiscount: -30,
+    isDiscount: false,
   },
   {
     id: 6,
@@ -55,9 +55,9 @@ const POPULAR_PRODUCTS = [
     productName: "ideapad",
     price: 240,
     imgUrl:
-      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-36-300x300.jpg",
     isHot: false,
-    isDiscount: -30,
+    isDiscount: false,
   },
   {
     id: 7,
@@ -65,9 +65,9 @@ const POPULAR_PRODUCTS = [
     productName: "ideapad",
     price: 240,
     imgUrl:
-      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-48-300x300.jpg",
     isHot: false,
-    isDiscount: -30,
+    isDiscount: false,
   },
   {
     id: 8,
@@ -75,9 +75,9 @@ const POPULAR_PRODUCTS = [
     productName: "ideapad",
     price: 240,
     imgUrl:
-      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-83-2-300x300.jpg",
     isHot: false,
-    isDiscount: -30,
+    isDiscount: false,
   },
   {
     id: 9,
@@ -85,9 +85,9 @@ const POPULAR_PRODUCTS = [
     productName: "ideapad",
     price: 240,
     imgUrl:
-      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/shoes-2-300x300.jpg",
     isHot: false,
-    isDiscount: -30,
+    isDiscount: false,
   },
   {
     id: 10,
@@ -95,9 +95,9 @@ const POPULAR_PRODUCTS = [
     productName: "ideapad",
     price: 240,
     imgUrl:
-      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/shoes-11-2-300x300.jpg",
     isHot: false,
-    isDiscount: -30,
+    isDiscount: false,
   },
   {
     id: 11,
@@ -105,9 +105,9 @@ const POPULAR_PRODUCTS = [
     productName: "ideapad",
     price: 240,
     imgUrl:
-      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
-    isHot: false,
-    isDiscount: -30,
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-72-300x300.jpg",
+    isHot: true,
+    isDiscount: false,
   },
   {
     id: 12,
@@ -115,9 +115,9 @@ const POPULAR_PRODUCTS = [
     productName: "ideapad",
     price: 240,
     imgUrl:
-      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
-    isHot: false,
-    isDiscount: -30,
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-31-300x300.jpg",
+    isHot: true,
+    isDiscount: false,
   },
 ];
 

@@ -4,7 +4,6 @@ import ProductItem from "./ProductItem";
 
 const wrapperStyle = {
   display: "grid",
-  border: "1px solid red",
   gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
   gap: "20px",
 };
