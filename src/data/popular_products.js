@@ -6,6 +6,8 @@ const POPULAR_PRODUCTS = [
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
+    secondImgUr:
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
     isHot: false,
     isDiscount: false,
   },
@@ -16,8 +18,11 @@ const POPULAR_PRODUCTS = [
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-99-300x300.jpg",
+    secondImgUr:
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/product-19-2-300x300.jpg",
+
     isHot: false,
-    isDiscount: false,
+    isDiscount: true,
   },
   {
     id: 3,
@@ -26,7 +31,10 @@ const POPULAR_PRODUCTS = [
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/product-21-300x300.jpg",
-    isHot: false,
+    secondImgUr:
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/product-21-300x300.jpg",
+
+    isHot: true,
     isDiscount: false,
   },
   {
@@ -36,6 +44,9 @@ const POPULAR_PRODUCTS = [
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-9-2-grey-300x300.jpg",
+    secondImgUr:
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-9-2-grey-300x300.jpg",
+
     isHot: false,
     isDiscount: false,
   },
@@ -46,7 +57,10 @@ const POPULAR_PRODUCTS = [
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/product-89-2-300x300.jpg",
-    isHot: false,
+    secondImgUr:
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/product-89-2-300x300.jpg",
+
+    isHot: true,
     isDiscount: false,
   },
   {
@@ -56,6 +70,9 @@ const POPULAR_PRODUCTS = [
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-36-300x300.jpg",
+    secondImgUr:
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-82-2-300x300.jpg",
+
     isHot: false,
     isDiscount: false,
   },
@@ -66,6 +83,9 @@ const POPULAR_PRODUCTS = [
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-48-300x300.jpg",
+    secondImgUr:
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/product-20-300x300.jpg",
+
     isHot: false,
     isDiscount: false,
   },
@@ -76,6 +96,9 @@ const POPULAR_PRODUCTS = [
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-83-2-300x300.jpg",
+    secondImgUr:
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-83-2-300x300.jpg",
+
     isHot: false,
     isDiscount: false,
   },
@@ -86,8 +109,11 @@ const POPULAR_PRODUCTS = [
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/shoes-2-300x300.jpg",
+    secondImgUr:
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/shoes-16-2-300x300.jpg",
+
     isHot: false,
-    isDiscount: false,
+    isDiscount: true,
   },
   {
     id: 10,
@@ -96,7 +122,10 @@ const POPULAR_PRODUCTS = [
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/shoes-11-2-300x300.jpg",
-    isHot: false,
+    secondImgUr:
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-79-2-300x300.jpg",
+
+    isHot: true,
     isDiscount: false,
   },
   {
@@ -106,6 +135,9 @@ const POPULAR_PRODUCTS = [
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-72-300x300.jpg",
+    secondImgUr:
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-72-300x300.jpg",
+
     isHot: true,
     isDiscount: false,
   },
@@ -116,7 +148,10 @@ const POPULAR_PRODUCTS = [
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-31-300x300.jpg",
-    isHot: true,
+    secondImgUr:
+      "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-31-300x300.jpg",
+
+    isHot: false,
     isDiscount: false,
   },
 ];

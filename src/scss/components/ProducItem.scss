@@ -4,6 +4,12 @@
   .product-image {
     margin-bottom: 20px;
     position: relative;
+    overflow: hidden;
+
+    // At hover
+    &:hover .quick-view {
+      bottom: 0 !important;
+    }
 
     img {
       width: 100%;
@@ -11,7 +17,6 @@
     }
 
     .offer {
-      color: red;
       position: absolute;
       top: 5px;
       left: 5px;
@@ -22,6 +27,29 @@
       justify-content: center;
       text-transform: uppercase;
       font-weight: 500;
+    }
+    .discount {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      @include customSpan(#e27c7c, #fff, 10px, 40px, 20px);
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .quick-view {
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      background-color: #000000e3;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      transition: 0.4s ease-in-out;
     }
   }
 
