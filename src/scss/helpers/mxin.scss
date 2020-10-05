@@ -5,3 +5,15 @@
   width: $width;
   height: $height;
 }
+
+@for $i from 1 to 60 {
+  .f-size-#{$i} {
+    font-size: $i + px;
+  }
+}
+
+@for $i from 1 to 60 {
+  .m-t-#{$i} {
+    margin-top: $i + px;
+  }
+}

@@ -28,3 +28,23 @@
   @extend .d-flex;
   flex-direction: column;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+// Font
+.font-bold {
+  font-weight: bold;
+}
+.font-300 {
+  font-weight: 300;
+}
+.font-400 {
+  font-weight: 400;
+}
+.font-500 {
+  font-weight: 500;
+}
+.font-700 {
+  font-weight: 700;
+}
