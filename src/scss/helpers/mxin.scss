@@ -6,14 +6,31 @@
   height: $height;
 }
 
+// Font size
 @for $i from 1 to 60 {
   .f-size-#{$i} {
     font-size: $i + px;
   }
 }
 
+// Margin
 @for $i from 1 to 60 {
   .m-t-#{$i} {
     margin-top: $i + px;
+  }
+}
+@for $i from 1 to 60 {
+  .m-r-#{$i} {
+    margin-right: $i + px;
+  }
+}
+@for $i from 1 to 60 {
+  .m-b-#{$i} {
+    margin-bottom: $i + px;
+  }
+}
+@for $i from 1 to 60 {
+  .m-l-#{$i} {
+    margin-left: $i + px;
   }
 }
