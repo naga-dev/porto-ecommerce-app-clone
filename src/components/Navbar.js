@@ -9,11 +9,14 @@ import { ReactComponent as HeartIcon } from "../assets/svg/heart.svg";
 import { ReactComponent as CartIcon } from "../assets/svg/bag.svg";
 import { ReactComponent as MenuIcon } from "../assets/svg/menu.svg";
 
-const Navbar = () => {
+const Navbar = ({ position }) => {
   return (
-    <div className="app-navbar-wrapper d-flex align-center justify-between">
+    <div
+      className="app-navbar-wrapper d-flex align-center justify-between"
+      style={{ position }}
+    >
       {/* Left Side */}
-      <Link to="#" className="app-logo">
+      <Link to="/" className="app-logo">
         <img src={Logo} alt="logo" />
       </Link>
       {/* Left Side */}
@@ -21,19 +24,19 @@ const Navbar = () => {
       {/* Middle side */}
       <ul className="navigator-wrapper d-flex align-center">
         <li>
-          <Link to="#">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="#">categories</Link>
+          <Link to="/shop">categories</Link>
         </li>
         <li>
-          <Link to="#">products</Link>
+          <Link to="/product">product</Link>
         </li>
         <li>
-          <Link to="#">features</Link>
+          <Link to="/features">features</Link>
         </li>
         <li>
-          <Link to="#">blog</Link>
+          <Link to="/blog">blog</Link>
         </li>
       </ul>
       {/* Middle side */}

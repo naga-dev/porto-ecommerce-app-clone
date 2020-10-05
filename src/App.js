@@ -1,20 +1,18 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import AppFooter from "./components/AppFooter";
-import HomeLanding from "./components/HomeLanding";
-import { HomePage } from "./components/HomePage";
-import Navbar from "./components/Navbar";
+// import AppFooter from "./components/AppFooter";
+import HomePage from "./pages/HomePage";
+import ShopPage from "./pages/ShopPage";
 import "./scss/App.scss";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <HomeLanding />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/shop" component={ShopPage} />
       </Switch>
-      <AppFooter />
+      {/* <AppFooter /> */}
     </div>
   );
 }
