@@ -10,11 +10,16 @@ const ProductItem = ({
   secondImgUr,
   isHot,
   isDiscount,
+  view,
 }) => {
   const [originalImg, setOriginalImg] = useState(true);
 
   return (
-    <div className="product-item-wrapper">
+    <div
+      className={`product-item-wrapper ${
+        view === "row" ? "show-one-row" : null
+      }`}
+    >
       <Link to="#">
         <div
           className="product-image"
@@ -52,6 +57,18 @@ const ProductItem = ({
           <FaStar />
         </div>
         <div className="product-price">${price}.00</div>
+        {view === "row" && (
+          <>
+            <p className="f-size-14 m-t-10 m-b-10">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+              similique voluptate nostrum necessitatibus sequi, iure cupiditate
+              ducimus facilis dolor! Vero.
+            </p>
+            <button className="add-to-card-btn d-flex align-center justify-center">
+              Add to card
+            </button>
+          </>
+        )}
       </div>
     </div>
   );

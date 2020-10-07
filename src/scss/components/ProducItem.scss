@@ -80,4 +80,37 @@
       color: #464646;
     }
   }
+
+  // Change product view based on state
+  &.show-one-row {
+    border-bottom: 1px solid $borderColor;
+    display: flex !important;
+    padding-bottom: 15px;
+
+    .product-image {
+      margin: 0 !important;
+    }
+
+    .product-content {
+      padding: 20px;
+      width: 100%;
+    }
+  }
+
+  .add-to-card-btn {
+    max-width: 140px;
+    border: none;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      background-color: rgb(39, 39, 39);
+    }
+  }
 }

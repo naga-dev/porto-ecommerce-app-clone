@@ -45,7 +45,7 @@
   }
 }
 
-@media screen and (max-width: $md) {
+@media screen and (max-width: $md-breakpoint) {
   .content {
     .content-text {
       h1 {
