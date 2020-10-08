@@ -2,7 +2,7 @@ import React from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const PageHeader = ({ prev, current }) => {
+const PageHeader = ({ prev, current, next }) => {
   const wrapper = {
     fontSize: "11px",
     fontWeight: "600",
@@ -29,6 +29,10 @@ const PageHeader = ({ prev, current }) => {
       <Link to="#">
         <span style={{ color: "#000" }}>{current}</span>
       </Link>
+      <div style={div}>
+        <FaChevronRight />
+      </div>
+      <span style={{ color: "#000" }}>{next}</span>
     </div>
   );
 };

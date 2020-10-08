@@ -30,7 +30,7 @@ const Navbar = ({ position }) => {
           <Link to="/shop">categories</Link>
         </li>
         <li>
-          <Link to="/product">product</Link>
+          <Link to="/shop/product">product</Link>
         </li>
         <li>
           <Link to="/features">features</Link>

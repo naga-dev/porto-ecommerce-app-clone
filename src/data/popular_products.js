@@ -2,7 +2,7 @@ const POPULAR_PRODUCTS = [
   {
     id: 1,
     category: "headphone",
-    productName: "ideapad",
+    productName: "men cap",
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",

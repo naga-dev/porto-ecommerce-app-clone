@@ -1,0 +1,123 @@
+.single-product-page-wrapper {
+  .product-row {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 20px;
+
+    .product-image-wrapper {
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    .product-details-wrapper {
+      .product-rating {
+        margin-bottom: 20px;
+        svg {
+          font-size: 16px;
+          margin-right: 3px;
+          color: #999999;
+        }
+      }
+
+      .product-price-range {
+        margin-bottom: 20px;
+
+        span {
+          color: #000;
+          font-size: 40px;
+          font-weight: 600;
+        }
+      }
+
+      .product-description {
+        font-size: 16px;
+        margin-bottom: 15px;
+        color: #7b7b7b;
+        width: 80%;
+        line-height: 1.5;
+        font-weight: 400;
+      }
+
+      .available-size {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        span:last-of-type {
+          border: 2px solid $borderColor;
+          padding: 3px 5px;
+        }
+      }
+
+      .add-product-to-cart {
+        form {
+          width: 300px;
+          flex-wrap: wrap;
+          margin: 30px 0;
+
+          button {
+            all: unset;
+            cursor: pointer;
+          }
+
+          .btn-wrapper {
+            border: 1px solid #e7e7e7;
+            width: 120px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            align-items: center;
+            font-weight: 400;
+            color: #616161;
+            margin-right: 30px;
+
+            .increase-quantity,
+            .descrese-quantity {
+              padding: 5px 10px;
+            }
+
+            .increase-quantity {
+              border-right: 1px solid $borderColor;
+            }
+
+            .descrese-quantity {
+              border-left: 1px solid #e7e7e7;
+            }
+          }
+
+          .add-to-card-btn {
+            background-color: #222529;
+            color: #fff;
+            padding: 10px;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 400;
+          }
+        }
+      }
+
+      .our-social-media {
+        border-top: 2px solid $borderColor;
+        padding-top: 20px;
+
+        .social-item {
+          border: 2px solid $borderColor;
+          display: block;
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 35px;
+          color: #000;
+          margin-right: 7px;
+
+          svg {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
