@@ -9,6 +9,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ShopTabSection from "./ShopTabSection";
 
 const ProductPage = () => {
   return (
@@ -17,12 +18,16 @@ const ProductPage = () => {
       <PageHeader prev="home" current="shop" next="product name" />
       <div className="single-product-page-wrapper container">
         <div className="product-row">
+          {/* Prouct image wrapper */}
           <div className="product-image-wrapper">
             <img
               src="https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-31-600x600.jpg"
               alt="product"
             />
           </div>
+          {/* Prouct image wrapper */}
+
+          {/* Product details */}
           <div className="product-details-wrapper">
             <div
               className="m-b-10 font-500 f-size-25"
@@ -133,7 +138,9 @@ const ProductPage = () => {
               </Link>
             </div>
           </div>
+          {/* Product details */}
         </div>
+        <ShopTabSection />
       </div>
     </>
   );

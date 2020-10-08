@@ -121,3 +121,11 @@
     }
   }
 }
+
+@media screen and (max-width: $lg-breakpoint) {
+  .single-product-page-wrapper {
+    .product-row {
+      grid-template-columns: 1fr !important;
+    }
+  }
+}

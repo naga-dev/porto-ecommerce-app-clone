@@ -1,0 +1,65 @@
+.tabs-wrapper {
+  margin-top: 30px;
+
+  .tab-switcher-wrapper {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ebebeb;
+
+    .tab-switcher-item {
+      padding: 10px;
+      border: 1px solid #ebebeb;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .active-tab {
+      border: none;
+      border-top: 2px solid #000;
+    }
+  }
+
+  .tab-content-wrapper {
+    padding-top: 20px;
+
+    .tab-content-item {
+      font-size: 14px;
+
+      p {
+        width: 60%;
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: #777;
+      }
+
+      ul {
+        li {
+          margin-bottom: 10px;
+          color: #777;
+          display: flex;
+          align-items: center;
+
+          svg {
+            margin-right: 10px;
+            background-color: #000;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $xl-breakpoint) {
+  .tabs-wrapper .tab-content-wrapper .tab-content-item p {
+    width: 100% !important;
+  }
+}
