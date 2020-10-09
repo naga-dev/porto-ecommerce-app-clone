@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import ProductPage from "./components/ProductPage";
-// import AppFooter from "./components/AppFooter";
+import AppFooter from "./components/AppFooter";
 import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
 import "./scss/App.scss";
@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/shop" component={ShopPage} />
         <Route path="/shop/product" component={ProductPage} />
       </Switch>
-      {/* <AppFooter /> */}
+      <AppFooter />
     </div>
   );
 }

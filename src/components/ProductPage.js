@@ -11,6 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import ShopTabSection from "./ShopTabSection";
 import RelatedProductsSection from "./RelatedProductsSection";
+import ProductsBlockColumns from "./ProductsBlockColumns";
 
 const ProductPage = () => {
   return (
@@ -143,6 +144,7 @@ const ProductPage = () => {
         </div>
         <ShopTabSection />
         <RelatedProductsSection />
+        <ProductsBlockColumns />
       </div>
     </>
   );
