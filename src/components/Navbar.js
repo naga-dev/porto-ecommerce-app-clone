@@ -32,12 +32,6 @@ const Navbar = ({ position }) => {
         <li>
           <Link to="/shop/product">product</Link>
         </li>
-        <li>
-          <Link to="/features">features</Link>
-        </li>
-        <li>
-          <Link to="/blog">blog</Link>
-        </li>
       </ul>
       {/* Middle side */}
 

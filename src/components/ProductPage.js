@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ShopTabSection from "./ShopTabSection";
+import RelatedProductsSection from "./RelatedProductsSection";
 
 const ProductPage = () => {
   return (
@@ -141,6 +142,7 @@ const ProductPage = () => {
           {/* Product details */}
         </div>
         <ShopTabSection />
+        <RelatedProductsSection />
       </div>
     </>
   );
