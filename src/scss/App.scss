@@ -15,7 +15,7 @@
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  height: 5000px;
+  // height: 5000px;
 }
 
 ul {
@@ -45,6 +45,7 @@ a {
 @import "./components/OurFeatures.scss";
 @import "./components/AppFooter.scss";
 @import "./components/ProductTabSection.scss";
+@import "./components/ProductModal.scss";
 
 // Pages
 @import "./pages/ShopPage.scss";

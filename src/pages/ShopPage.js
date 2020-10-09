@@ -10,6 +10,7 @@ import POPULAR_PRODUCTS from "../data/popular_products";
 import ProductItem from "../components/ProductItem";
 
 const ShopPage = () => {
+  // eslint-disable-next-line
   const [accessoriesList, setAccessoriesList] = useState(false);
   const [orderBy, setOrderBy] = useState("latest");
   const [view, setView] = useState("grid");
