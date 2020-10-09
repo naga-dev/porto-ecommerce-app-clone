@@ -1,0 +1,193 @@
+.product-modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #858686;
+  overflow: auto;
+
+  .product-modal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content-wrapper {
+      background-color: #fff;
+      width: 60%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+
+      .product-image-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+
+        .thumbnail-image {
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+
+          img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .product-details-wrapper {
+        position: relative;
+
+        .product-rating {
+          margin-bottom: 20px;
+          svg {
+            font-size: 16px;
+            margin-right: 3px;
+            color: #999999;
+          }
+        }
+
+        .product-price-range {
+          margin-bottom: 20px;
+
+          span {
+            color: #000;
+            font-size: 40px;
+            font-weight: 600;
+          }
+        }
+
+        .product-description {
+          font-size: 16px;
+          margin-bottom: 15px;
+          color: #7b7b7b;
+          width: 80%;
+          line-height: 1.5;
+          font-weight: 400;
+        }
+
+        .available-size {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+
+          span:last-of-type {
+            border: 2px solid $borderColor;
+            padding: 3px 5px;
+          }
+        }
+
+        .add-product-to-cart {
+          form {
+            width: 300px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+
+            button {
+              all: unset;
+              cursor: pointer;
+            }
+
+            .btn-wrapper {
+              border: 1px solid #e7e7e7;
+              width: 120px;
+              display: flex;
+              justify-content: space-between;
+              font-size: 18px;
+              align-items: center;
+              font-weight: 400;
+              color: #616161;
+              margin-right: 30px;
+
+              .increase-quantity,
+              .descrese-quantity {
+                padding: 5px 10px;
+              }
+
+              .increase-quantity {
+                border-right: 1px solid $borderColor;
+              }
+
+              .descrese-quantity {
+                border-left: 1px solid #e7e7e7;
+              }
+            }
+
+            .add-to-card-btn {
+              background-color: #222529;
+              color: #fff;
+              padding: 10px;
+              text-transform: uppercase;
+              font-size: 14px;
+              font-weight: 400;
+            }
+          }
+        }
+
+        .our-social-media {
+          border-top: 2px solid $borderColor;
+          padding-top: 20px;
+
+          .social-item {
+            border: 2px solid $borderColor;
+            display: block;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            color: #000;
+            margin-right: 7px;
+
+            svg {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .close-modal {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-weight: 400;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border: 1px solid $borderColor;
+          text-align: center;
+          line-height: 30px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .product-modal-wrapper {
+    margin: 0 auto !important;
+
+    .product-modal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .content-wrapper {
+      width: 95% !important;
+    }
+  }
+}
