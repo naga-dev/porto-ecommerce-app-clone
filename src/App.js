@@ -13,7 +13,10 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/shop" component={ShopPage} />
-        <Route path="/shop/product" component={ProductPage} />
+        <Route
+          path="/shop/:product"
+          render={(routeProps) => <ProductPage {...routeProps} />}
+        />
         <Route path="/test" component={TextPage} />
       </Switch>
       <AppFooter />

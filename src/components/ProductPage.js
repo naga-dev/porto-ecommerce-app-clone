@@ -13,7 +13,16 @@ import ShopTabSection from "./ShopTabSection";
 import RelatedProductsSection from "./RelatedProductsSection";
 import ProductsBlockColumns from "./ProductsBlockColumns";
 
-const ProductPage = () => {
+import POPULAR_PRODUCTS from "../data/popular_products";
+
+const ProductPage = ({ match }) => {
+  const { params } = match;
+  const currentProduct = POPULAR_PRODUCTS.map((item) => item).filter(
+    (item) =>
+      item.productName.toLowerCase().replace(/ /g, "-") === params.product
+  );
+  const { productName, imgUrl, price } = currentProduct[0];
+
   return (
     <>
       <Navbar />
@@ -22,10 +31,7 @@ const ProductPage = () => {
         <div className="product-row">
           {/* Prouct image wrapper */}
           <div className="product-image-wrapper">
-            <img
-              src="https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-31-600x600.jpg"
-              alt="product"
-            />
+            <img src={imgUrl} alt="product" />
           </div>
           {/* Prouct image wrapper */}
 
@@ -35,7 +41,7 @@ const ProductPage = () => {
               className="m-b-10 font-500 f-size-25"
               style={{ color: "#222529" }}
             >
-              Men Cap
+              {productName}
             </div>
             <div className="product-rating">
               <FaStar />
@@ -46,7 +52,7 @@ const ProductPage = () => {
             </div>
 
             <div className="product-price-range">
-              <span>$199.00</span> <span>-</span> <span>$299.00</span>
+              <span>${price}</span> <span>-</span> <span>$299.00</span>
             </div>
 
             <div className="product-description">

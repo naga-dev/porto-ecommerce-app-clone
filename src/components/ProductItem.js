@@ -16,6 +16,9 @@ const ProductItem = ({
   const [originalImg, setOriginalImg] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
+  // Clean yp product name with URL
+  const productRoute = productName.toLowerCase().replace(/ /g, "-");
+
   return (
     <>
       <div
@@ -23,7 +26,7 @@ const ProductItem = ({
           view === "row" ? "show-one-row" : null
         }`}
       >
-        <Link to="#">
+        <Link to={`/shop/${productRoute}`}>
           <div
             className="product-image"
             onMouseOver={() => setOriginalImg(false)}
