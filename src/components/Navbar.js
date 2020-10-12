@@ -11,10 +11,7 @@ import { ReactComponent as MenuIcon } from "../assets/svg/menu.svg";
 
 const Navbar = ({ position }) => {
   return (
-    <div
-      className="app-navbar-wrapper d-flex align-center justify-between"
-      style={{ position }}
-    >
+    <div className="app-navbar-wrapper d-flex align-center justify-between" style={{ position }}>
       {/* Left Side */}
       <Link to="/" className="app-logo">
         <img src={Logo} alt="logo" />
@@ -28,9 +25,6 @@ const Navbar = ({ position }) => {
         </li>
         <li>
           <Link to="/shop">categories</Link>
-        </li>
-        <li>
-          <Link to="/shop/product">product</Link>
         </li>
       </ul>
       {/* Middle side */}

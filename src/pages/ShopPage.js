@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import PageHeader from "../components/PageHeader";
-import { FaChevronDown, FaMinus } from "react-icons/fa";
+import { FaMinus } from "react-icons/fa";
 import PageBanner from "../assets/images/shop/page-banner.jpg";
 import { Link } from "react-router-dom";
 import { BsFillGrid3X3GapFill, BsFillGrid1X2Fill } from "react-icons/bs";
@@ -10,16 +10,12 @@ import POPULAR_PRODUCTS from "../data/popular_products";
 import ProductItem from "../components/ProductItem";
 
 const ShopPage = () => {
-  // eslint-disable-next-line
-  const [accessoriesList, setAccessoriesList] = useState(false);
   const [orderBy, setOrderBy] = useState("latest");
   const [view, setView] = useState("grid");
 
   const wrapperStyle = {
     display: "grid",
-    gridTemplateColumns: `${
-      view === "grid" ? "repeat(auto-fit, minmax(200px, 1fr))" : "1fr"
-    }`,
+    gridTemplateColumns: `${view === "grid" ? "repeat(auto-fit, minmax(200px, 1fr))" : "1fr"}`,
     gap: "20px",
   };
 
@@ -38,45 +34,21 @@ const ShopPage = () => {
               <ul className="toggle-list d-flex flex-column">
                 <div className="header d-flex align-center justify-between">
                   <span>acessories</span>
-                  <FaChevronDown />
                 </div>
-                {accessoriesList && (
-                  <>
-                    <li>hello</li>
-                    <li>hello</li>
-                    <li>hello</li>
-                  </>
-                )}
               </ul>
             </li>
             <li className="slide-menu-list-item">
               <ul className="toggle-list d-flex flex-column">
                 <div className="header d-flex align-center justify-between">
                   <span>fashion</span>
-                  <FaChevronDown />
                 </div>
-                {accessoriesList && (
-                  <>
-                    <li>hello</li>
-                    <li>hello</li>
-                    <li>hello</li>
-                  </>
-                )}
               </ul>
             </li>
             <li className="slide-menu-list-item">
               <ul className="toggle-list d-flex flex-column">
                 <div className="header d-flex align-center justify-between">
                   <span>electronics</span>
-                  <FaChevronDown />
                 </div>
-                {accessoriesList && (
-                  <>
-                    <li>hello</li>
-                    <li>hello</li>
-                    <li>hello</li>
-                  </>
-                )}
               </ul>
             </li>
 
@@ -86,52 +58,31 @@ const ShopPage = () => {
             </div>
             <div className="slide-menu-list-item">
               <li className="color-item d-flex align-center">
-                <span
-                  className="color-squre m-r-10"
-                  style={{ backgroundColor: "#dda756" }}
-                />
+                <span className="color-squre m-r-10" style={{ backgroundColor: "#dda756" }} />
                 <span className="color-name">Brown</span>
               </li>
               <li className="color-item d-flex align-center">
-                <span
-                  className="color-squre m-r-10"
-                  style={{ backgroundColor: "#7bbad1" }}
-                />
+                <span className="color-squre m-r-10" style={{ backgroundColor: "#7bbad1" }} />
                 <span className="color-name">Lightblue</span>
               </li>
               <li className="color-item d-flex align-center">
-                <span
-                  className="color-squre m-r-10"
-                  style={{ backgroundColor: "#81d742" }}
-                />
+                <span className="color-squre m-r-10" style={{ backgroundColor: "#81d742" }} />
                 <span className="color-name">Green</span>
               </li>
               <li className="color-item d-flex align-center">
-                <span
-                  className="color-squre m-r-10"
-                  style={{ backgroundColor: "#6085a5" }}
-                />
+                <span className="color-squre m-r-10" style={{ backgroundColor: "#6085a5" }} />
                 <span className="color-name">Indigo</span>
               </li>
               <li className="color-item d-flex align-center">
-                <span
-                  className="color-squre m-r-10"
-                  style={{ backgroundColor: "#000000" }}
-                />
+                <span className="color-squre m-r-10" style={{ backgroundColor: "#000000" }} />
                 <span className="color-name">Black</span>
               </li>
               <li className="color-item d-flex align-center">
-                <span
-                  className="color-squre m-r-10"
-                  style={{ backgroundColor: "#0188cc" }}
-                />
+                <span className="color-squre m-r-10" style={{ backgroundColor: "#0188cc" }} />
                 <span className="color-name">Blue</span>
               </li>
               <li className="color-item d-flex align-center">
-                <span
-                  className="color-squre m-r-10"
-                  style={{ backgroundColor: "#ab6e6e" }}
-                />
+                <span className="color-squre m-r-10" style={{ backgroundColor: "#ab6e6e" }} />
                 <span className="color-name">Red</span>
               </li>
             </div>
@@ -141,18 +92,10 @@ const ShopPage = () => {
               <FaMinus />
             </div>
             <li className="slide-menu-list-item d-flex">
-              <span className="size-squre d-flex align-center justify-center f-size-12">
-                xl
-              </span>
-              <span className="size-squre d-flex align-center justify-center f-size-12">
-                l
-              </span>
-              <span className="size-squre d-flex align-center justify-center f-size-12">
-                m
-              </span>
-              <span className="size-squre d-flex align-center justify-center f-size-12">
-                s
-              </span>
+              <span className="size-squre d-flex align-center justify-center f-size-12">xl</span>
+              <span className="size-squre d-flex align-center justify-center f-size-12">l</span>
+              <span className="size-squre d-flex align-center justify-center f-size-12">m</span>
+              <span className="size-squre d-flex align-center justify-center f-size-12">s</span>
             </li>
           </ul>
         </div>
@@ -184,7 +127,7 @@ const ShopPage = () => {
                 name="orderby"
                 className="orderBy"
                 value={orderBy}
-                onChange={(e) => setOrderBy(e.target.value)}
+                onChange={e => setOrderBy(e.target.value)}
               >
                 <option value="date">Sort by latest</option>
                 <option value="popularity">Sort by popularity</option>
@@ -213,7 +156,7 @@ const ShopPage = () => {
           {/* Product settings */}
 
           <div className="m-t-30" style={wrapperStyle}>
-            {POPULAR_PRODUCTS.map((item) => (
+            {POPULAR_PRODUCTS.map(item => (
               <ProductItem key={item.id} {...item} view={view} />
             ))}
           </div>

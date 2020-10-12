@@ -21,40 +21,26 @@ const ProductItem = ({
 
   return (
     <>
-      <div
-        className={`product-item-wrapper ${
-          view === "row" ? "show-one-row" : null
-        }`}
-      >
-        <Link to={`/shop/${productRoute}`}>
-          <div
-            className="product-image"
-            onMouseOver={() => setOriginalImg(false)}
-            onMouseLeave={() => setOriginalImg(true)}
-          >
-            {originalImg ? (
-              <img src={imgUrl} alt="product" />
-            ) : (
-              <img src={secondImgUr} alt="second" />
-            )}
-            {isHot && (
-              <span className="offer d-flex align-center justify-center">
-                hot
-              </span>
-            )}
-            {isDiscount && (
-              <span className="discount d-flex align-center justify-center">
-                -20%
-              </span>
-            )}
-            <div className="quick-view" onClick={() => setShowModal(true)}>
-              quick view
-            </div>
+      <div className={`product-item-wrapper ${view === "row" ? "show-one-row" : null}`}>
+        <div
+          className="product-image"
+          onMouseOver={() => setOriginalImg(false)}
+          onMouseLeave={() => setOriginalImg(true)}
+        >
+          {originalImg ? (
+            <img src={imgUrl} alt="product" />
+          ) : (
+            <img src={secondImgUr} alt="second" />
+          )}
+          {isHot && <span className="offer d-flex align-center justify-center">hot</span>}
+          {isDiscount && <span className="discount d-flex align-center justify-center">-20%</span>}
+          <div className="quick-view" onClick={() => setShowModal(true)}>
+            quick view
           </div>
-        </Link>
+        </div>
         <div className="product-content d-flex flex-column">
           <span className="category">{category}</span>
-          <Link to="#" className="product-name">
+          <Link to={`/shop/${productRoute}`} className="product-name">
             {productName}
           </Link>
           <div className="product-rating">
@@ -68,9 +54,8 @@ const ProductItem = ({
           {view === "row" && (
             <>
               <p className="f-size-14 m-t-10 m-b-10">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-                similique voluptate nostrum necessitatibus sequi, iure
-                cupiditate ducimus facilis dolor! Vero.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore similique voluptate
+                nostrum necessitatibus sequi, iure cupiditate ducimus facilis dolor! Vero.
               </p>
               <button className="add-to-card-btn d-flex align-center justify-center">
                 Add to card
