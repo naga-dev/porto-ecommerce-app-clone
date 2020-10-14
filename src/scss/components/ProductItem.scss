@@ -7,8 +7,14 @@
     overflow: hidden;
 
     // At hover
-    &:hover .quick-view {
-      bottom: 0 !important;
+    &:hover {
+      .quick-view {
+        bottom: 0 !important;
+      }
+
+      .go-to-product {
+        opacity: 1;
+      }
     }
 
     img {
@@ -51,6 +57,24 @@
       font-size: 0.7rem;
       transition: 0.4s ease-in-out;
       cursor: pointer;
+    }
+
+    .go-to-product {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #fff;
+      color: #5a5a5a;
+      transition: opacity 0.5s ease-in-out;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      opacity: 0;
+
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
     }
   }
 

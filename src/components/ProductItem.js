@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaStar } from "react-icons/fa";
+import { FaLongArrowAltRight, FaStar } from "react-icons/fa";
 import ProductModal from "./ProductModal";
 
 const ProductItem = ({
@@ -37,7 +37,14 @@ const ProductItem = ({
           <div className="quick-view" onClick={() => setShowModal(true)}>
             quick view
           </div>
+          <Link
+            to={`/shop/${productRoute}`}
+            className="go-to-product d-flex align-center justify-center"
+          >
+            <FaLongArrowAltRight />
+          </Link>
         </div>
+
         <div className="product-content d-flex flex-column">
           <span className="category">{category}</span>
           <Link to={`/shop/${productRoute}`} className="product-name">

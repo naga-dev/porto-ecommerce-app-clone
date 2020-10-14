@@ -29,10 +29,14 @@ const PageHeader = ({ prev, current, next }) => {
       <Link to="#">
         <span style={{ color: "#000" }}>{current}</span>
       </Link>
-      <div style={div}>
-        <FaChevronRight />
-      </div>
-      <span style={{ color: "#000" }}>{next}</span>
+      {next && (
+        <>
+          <div style={div}>
+            <FaChevronRight />
+          </div>
+          <span style={{ color: "#000" }}>{next}</span>{" "}
+        </>
+      )}
     </div>
   );
 };

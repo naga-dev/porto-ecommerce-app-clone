@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import { ReactComponent as SearchIcon } from "../assets/svg/loupe.svg";
 import { ReactComponent as UserIcon } from "../assets/svg/user.svg";
-import { ReactComponent as HeartIcon } from "../assets/svg/heart.svg";
 import { ReactComponent as CartIcon } from "../assets/svg/bag.svg";
 import { ReactComponent as MenuIcon } from "../assets/svg/menu.svg";
 
@@ -48,13 +47,7 @@ const Navbar = ({ position }) => {
           </Link>
         </li>
         <li>
-          <Link to="#">
-            <HeartIcon />
-            <span className="count">0</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="#">
+          <Link to="/cart">
             <CartIcon />
             <span className="count">0</span>
           </Link>
