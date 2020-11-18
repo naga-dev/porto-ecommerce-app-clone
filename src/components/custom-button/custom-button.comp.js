@@ -1,8 +1,9 @@
 import React from "react";
 
-const CustomButton = ({ type, title }) => {
+const CustomButton = ({ type, title, backgroud, color }) => {
   const styles = {
-    background: "#222529",
+    background: `${backgroud}`,
+    color: `${color}`,
     border: "none",
     outline: 0,
     width: "100%",
@@ -10,8 +11,9 @@ const CustomButton = ({ type, title }) => {
     textTransform: "uppercase",
     fontWeight: "bold",
     cursor: "pointer",
-    color: "#fff",
+    marginTop: "15px",
   };
+
   return (
     <button type={type} style={{ ...styles }}>
       {title}

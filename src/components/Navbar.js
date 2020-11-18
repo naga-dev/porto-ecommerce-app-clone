@@ -9,8 +9,10 @@ import { ReactComponent as CartIcon } from "../assets/svg/bag.svg";
 import { ReactComponent as MenuIcon } from "../assets/svg/menu.svg";
 
 import CardDropDownMenu from "../components/CardDropDownMenu";
+import { connect } from "react-redux";
+import { togglecartSidebar } from "../redux/cart-menu/cart-sidebar.actions";
 
-const Navbar = ({ position }) => {
+const Navbar = ({ position, showCartSidebar }) => {
   return (
     <div className="app-navbar-wrapper d-flex align-center justify-between" style={{ position }}>
       {/* Left Side */}
@@ -48,7 +50,7 @@ const Navbar = ({ position }) => {
             <UserIcon />
           </Link>
         </li>
-        <li className="card-drop-down-wrapper">
+        <li className="card-drop-down-wrapper" onClick={showCartSidebar}>
           <CartIcon />
           <span className="count">0</span>
           <CardDropDownMenu />
@@ -59,4 +61,12 @@ const Navbar = ({ position }) => {
   );
 };
 
-export default Navbar;
+const mapStateToProps = state => ({
+  hidden: state.cartSidebar.hidden,
+});
+
+const mapDispatchToProps = dispatch => ({
+  showCartSidebar: () => dispatch(togglecartSidebar()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

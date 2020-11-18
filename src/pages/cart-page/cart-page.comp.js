@@ -1,10 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProductImg from "../assets/images/category-item-1.jpg";
 
-class CartPage extends React.Component {
-  render() {
-    return (
+import Img from "../../assets/images/category-item-1.jpg";
+import Navbar from "../../components/Navbar";
+import PageHeader from "../../components/PageHeader";
+
+const CartPage = () => {
+  return (
+    <>
+      <Navbar />
+      <PageHeader prev="Home" next="Shop" current="cart" />
       <div className="cart-page-wrapper container">
         <div className="cart-page-content-wrapper font">
           <div className="cart-page-content">
@@ -25,13 +30,26 @@ class CartPage extends React.Component {
                 </tr>
               </thead>
               <tbody>
-                <td>
-                  <img src={ProductImg} alt="" />
-                </td>
-                <td>ddd</td>
-                <td>ddd</td>
-                <td>ddd</td>
-                <td>ddd</td>
+                <tr>
+                  <td>
+                    <img src={Img} alt="" style={{ width: "100px" }} />
+                  </td>
+                  <td>100</td>
+                  <td>100</td>
+                  <td>100</td>
+                  <td>
+                    <span
+                      style={{
+                        cursor: "pointer",
+                        color: "red",
+                        fontSize: "20px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      X
+                    </span>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -72,12 +90,10 @@ class CartPage extends React.Component {
               <span>$100</span>
             </li>
           </ul>
-
-          {/* <StripeIndex price={`$${cartItemsPrices * cartItemsQty}`} /> */}
         </div>
       </div>
-    );
-  }
-}
+    </>
+  );
+};
 
 export default CartPage;

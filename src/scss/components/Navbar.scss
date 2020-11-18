@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 9998;
 
   .app-logo {
     img {
@@ -70,12 +70,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      cursor: pointer;
 
       .card-drop-down-menu {
-        // position: absolute;
         top: 0;
         right: 0;
-        border: 1px solid red;
       }
     }
   }

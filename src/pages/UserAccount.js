@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import PageLandingHeader from "../components/PageLandingHeader";
 import CustomForm from "../components/CustomForm";
 import CustomInput from "../components/CustomInput";
-import CustomButton from "../scss/components/CustomButton";
+import CustomButton from "../components/custom-button/custom-button.comp";
 
 const UserAccount = () => {
   const [loginEmail, setEmail] = useState("");
@@ -22,7 +22,7 @@ const UserAccount = () => {
           <CustomForm>
             <CustomInput
               type="email"
-              id="email"
+              id="loginEmail"
               label="Username or email address"
               name="email"
               value={loginEmail}
@@ -30,13 +30,13 @@ const UserAccount = () => {
             />
             <CustomInput
               type="password"
-              id="email"
+              id="loginPpassword"
               label="Password"
               name="password"
               value={loginPpassword}
               handleChange={e => setLoginPassword(e.target.value)}
             />
-            <CustomButton title="login" type="submit" />
+            <CustomButton title="login" type="submit" backgroud="#222529" color="#fff" />
           </CustomForm>
         </div>
         <div className="login-side">
@@ -44,7 +44,7 @@ const UserAccount = () => {
           <CustomForm>
             <CustomInput
               type="email"
-              id="email"
+              id="registerEmail"
               label="Email address"
               name="email"
               value={registerEmail}
@@ -52,13 +52,13 @@ const UserAccount = () => {
             />
             <CustomInput
               type="password"
-              id="email"
+              id="registerPassword"
               label="Password"
               name="password"
               value={registerPassword}
               handleChange={e => setRegisterPassword(e.target.value)}
             />
-            <CustomButton title="register" type="submit" />
+            <CustomButton title="register" type="submit" backgroud="#222529" color="#fff" />
           </CustomForm>
         </div>
       </div>
