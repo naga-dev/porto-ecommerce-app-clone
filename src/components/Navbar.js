@@ -8,6 +8,8 @@ import { ReactComponent as UserIcon } from "../assets/svg/user.svg";
 import { ReactComponent as CartIcon } from "../assets/svg/bag.svg";
 import { ReactComponent as MenuIcon } from "../assets/svg/menu.svg";
 
+import CardDropDownMenu from "../components/CardDropDownMenu";
+
 const Navbar = ({ position }) => {
   return (
     <div className="app-navbar-wrapper d-flex align-center justify-between" style={{ position }}>
@@ -42,15 +44,14 @@ const Navbar = ({ position }) => {
           </Link>
         </li>
         <li>
-          <Link to="#">
+          <Link to="/user/account">
             <UserIcon />
           </Link>
         </li>
-        <li>
-          <Link to="/cart">
-            <CartIcon />
-            <span className="count">0</span>
-          </Link>
+        <li className="card-drop-down-wrapper">
+          <CartIcon />
+          <span className="count">0</span>
+          <CardDropDownMenu />
         </li>
       </ul>
       {/* Right Side */}

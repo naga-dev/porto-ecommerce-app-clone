@@ -1,0 +1,11 @@
+.user-account-from-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  &.custom-container {
+    width: 70%;
+    margin: 0 auto;
+    margin: 50px auto;
+  }
+}

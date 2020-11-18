@@ -8,6 +8,7 @@ import { BsFillGrid3X3GapFill, BsFillGrid1X2Fill } from "react-icons/bs";
 
 import POPULAR_PRODUCTS from "../data/popular_products";
 import ProductItem from "../components/ProductItem";
+// import ProductModal from "../components/ProductModal";
 
 const ShopPage = () => {
   const [orderBy, setOrderBy] = useState("latest");
@@ -56,6 +57,7 @@ const ShopPage = () => {
               <div className="title p-b-5 m-t-15">colors</div>
               <FaMinus />
             </div>
+
             <div className="slide-menu-list-item">
               <li className="color-item d-flex align-center">
                 <span className="color-squre m-r-10" style={{ backgroundColor: "#dda756" }} />
@@ -99,6 +101,7 @@ const ShopPage = () => {
             </li>
           </ul>
         </div>
+
         <div className="page-main-content">
           {/* Page banner */}
           <div
