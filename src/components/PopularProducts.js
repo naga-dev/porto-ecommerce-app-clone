@@ -22,7 +22,7 @@ const PopularProducts = () => {
       <h3 style={title}>Popular products</h3>
       <div className="grid-content" style={wrapperStyle}>
         {POPULAR_PRODUCTS.map(item => (
-          <ProductItem key={item.id} {...item} />
+          <ProductItem key={item.id} {...item} item={item} />
         ))}
       </div>
     </div>

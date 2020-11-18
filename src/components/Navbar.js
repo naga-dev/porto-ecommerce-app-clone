@@ -33,7 +33,7 @@ const Navbar = ({ position, showCartSidebar }) => {
       {/* Middle side */}
 
       {/* Toggle Side bar */}
-      <div className="toggle-side-menu-icon">
+      <div className="toggle-side-menu-icon" onClick={showCartSidebar}>
         <MenuIcon />
       </div>
       {/* Toggle Side bar */}

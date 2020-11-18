@@ -58,15 +58,8 @@ const RelatedProductsSection = () => {
     <div style={wrapper}>
       <h4 style={title}>Related Products</h4>
       <div style={contentWrapper}></div>
-      <Swiper
-        {...swiperConfig}
-        slidesPerView={5}
-        autoplay
-
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
-      >
-        {POPULAR_PRODUCTS.map((item) => {
+      <Swiper {...swiperConfig} slidesPerView={5} autoplay>
+        {POPULAR_PRODUCTS.map(item => {
           return (
             <SwiperSlide key={item.id}>
               <ProductItem {...item} />

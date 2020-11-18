@@ -8,7 +8,6 @@ const cartSidebarReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case cartSidebarTypes.TOGGLE_HIDDEN_SDIEBAR:
       return {
-        ...state,
         hidden: !state.hidden,
       };
     default:

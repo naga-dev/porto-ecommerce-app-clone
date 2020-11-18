@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaStar,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaStar, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const ProductModal = ({
@@ -18,7 +12,7 @@ const ProductModal = ({
   isDiscount,
   closeModal,
 }) => {
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
   };
   return (
@@ -36,10 +30,7 @@ const ProductModal = ({
 
           {/* Product details */}
           <div className="product-details-wrapper">
-            <div
-              className="m-b-10 font-500 f-size-25"
-              style={{ color: "#222529" }}
-            >
+            <div className="m-b-10 font-500 f-size-25" style={{ color: "#222529" }}>
               {productName}
             </div>
             <div className="product-rating">
@@ -55,36 +46,26 @@ const ProductModal = ({
             </div>
 
             <div className="product-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea facere
-              non repellat nemo quasi sit eveniet fugit in id corrupti sequi
-              praesentium quisquam, qui consequatur velit corporis quo ab
-              dolores?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea facere non repellat nemo
+              quasi sit eveniet fugit in id corrupti sequi praesentium quisquam, qui consequatur
+              velit corporis quo ab dolores?
             </div>
 
             <div className="m-b-10">
               <div>
-                <span
-                  className="font-300 m-r-5 f-size-14"
-                  style={{ color: "#000" }}
-                >
+                <span className="font-300 m-r-5 f-size-14" style={{ color: "#000" }}>
                   sku:
                 </span>
                 <span className="f-size-14 font-400">654111995-1-1-2</span>
               </div>
               <div>
-                <span
-                  className="font-300 m-r-5 f-size-14"
-                  style={{ color: "#000" }}
-                >
+                <span className="font-300 m-r-5 f-size-14" style={{ color: "#000" }}>
                   categories:
                 </span>
                 <span className="f-size-14 font-400">bags, t-shirt</span>
               </div>
               <div>
-                <span
-                  className="font-300 m-r-5 f-size-14"
-                  style={{ color: "#000" }}
-                >
+                <span className="font-300 m-r-5 f-size-14" style={{ color: "#000" }}>
                   tags:
                 </span>
                 <span className="f-size-14 font-400">clothes, fashion</span>
@@ -120,10 +101,7 @@ const ProductModal = ({
             </div>
 
             <div className="add-product-to-cart">
-              <form
-                className="d-flex align-center justify-between"
-                onSubmit={handleSubmit}
-              >
+              <form className="d-flex align-center justify-between" onSubmit={handleSubmit}>
                 <div className="btn-wrapper">
                   <button className="increase-quantity">+</button>
                   <span className="quantity">1</span>
