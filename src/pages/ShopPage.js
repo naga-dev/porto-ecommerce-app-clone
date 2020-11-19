@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import PageHeader from "../components/PageHeader";
 import { FaMinus } from "react-icons/fa";
@@ -10,7 +10,8 @@ import POPULAR_PRODUCTS from "../data/popular_products";
 import ProductItem from "../components/ProductItem";
 import { motion } from "framer-motion";
 import routeMotion from "../motion/RouteMotion";
-// import ProductModal from "../components/ProductModal";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ShopPage = () => {
   const [orderBy, setOrderBy] = useState("latest");
@@ -22,11 +23,18 @@ const ShopPage = () => {
     gap: "20px",
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1500,
+    });
+  }, []);
+
   return (
     <motion.div variants={routeMotion} initial="hidden" animate="visiable" exit="exit">
       <Navbar />
       <PageHeader prev="home" current="shop" />
-      <div className="shop-page-wrapper container">
+
+      <div className="shop-page-wrapper container" data-aos="zoom-in">
         <div className="page-side-menu">
           <ul>
             <div className="column-header d-flex align-center justify-between p-b-20">

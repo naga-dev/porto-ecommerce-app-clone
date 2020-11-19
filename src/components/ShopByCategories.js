@@ -1,32 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ShopByCategoriesItem from "./ShopByCategoriesItem";
 import CATEGORIES_DATA from "../data/categories";
 
 import { motion } from "framer-motion";
-
-const categoriesMotion = {
-  hidden: {
-    opactiy: 0,
-    x: "-100vw",
-  },
-  visiable: {
-    opactiy: 1,
-    x: 0,
-    transition: {
-      delay: 0.5,
-      duraction: 0.4,
-    },
-  },
-};
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ShopByCategories = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
+
   return (
-    <motion.div
-      className="shop-by-categories-wrapper container"
-      variants={categoriesMotion}
-      initial="hidden"
-      animate="visiable"
-    >
+    <motion.div className="shop-by-categories-wrapper container" data-aos="fade-down">
       <h3 className="title">Shop By Categoreis</h3>
       <div className="category-row">
         {CATEGORIES_DATA.map(item => (

@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import POPULAR_PRODUCTS from "../data/popular_products";
 import ProductItem from "./ProductItem";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const wrapperStyle = {
   display: "grid",
@@ -17,8 +20,14 @@ const title = {
 };
 
 const PopularProducts = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+    });
+  }, []);
+
   return (
-    <div className="container">
+    <div className="container" data-aos="zoom-in">
       <h3 style={title}>Popular products</h3>
       <div className="grid-content" style={wrapperStyle}>
         {POPULAR_PRODUCTS.map(item => (

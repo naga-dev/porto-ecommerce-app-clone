@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Img from "../../assets/images/category-item-1.jpg";
@@ -7,7 +7,16 @@ import Navbar from "../../components/Navbar";
 import PageHeader from "../../components/PageHeader";
 import routeMotion from "../../motion/RouteMotion";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const CartPage = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
+
   return (
     <motion.div variants={routeMotion} initial="hidden" animate="visiable" exit="exit">
       <Navbar />
@@ -20,7 +29,7 @@ const CartPage = () => {
             </h3>
           </div>
 
-          <div className="shopping-cart-table">
+          <div className="shopping-cart-table" data-aos="fade-left">
             <table>
               <thead>
                 <tr>
@@ -65,7 +74,7 @@ const CartPage = () => {
           "4242 4242 4242 4242" - EXP: 11 / 20 - CVV: 123
         </div>
 
-        <div className="proceed-to-checkout">
+        <div className="proceed-to-checkout" data-aos="zoom-out">
           <ul className="proceed-to-checkout-list">
             <li>
               <span>Subtotal:</span>
