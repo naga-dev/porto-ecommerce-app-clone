@@ -26,7 +26,7 @@ const PageHeader = ({ prev, current, next }) => {
       <div style={div}>
         <FaChevronRight />
       </div>
-      <Link to="#">
+      <Link to={`/${current}`}>
         <span style={{ color: "#000" }}>{current}</span>
       </Link>
       {next && (

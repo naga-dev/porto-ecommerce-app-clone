@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaLongArrowAltRight, FaStar } from "react-icons/fa";
 import ProductModal from "./ProductModal";
+import { motion } from "framer-motion";
 
 const ProductItem = ({
   category,
@@ -16,7 +17,7 @@ const ProductItem = ({
   const [originalImg, setOriginalImg] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
-  // Clean yp product name with URL
+  // Clean up product name with URL
   const productRoute = productName.toLowerCase().replace(/ /g, "-");
 
   return (
@@ -34,9 +35,9 @@ const ProductItem = ({
           )}
           {isHot && <span className="offer d-flex align-center justify-center">hot</span>}
           {isDiscount && <span className="discount d-flex align-center justify-center">-20%</span>}
-          <div className="quick-view" onClick={() => setShowModal(true)}>
+          <motion.div className="quick-view" onClick={() => setShowModal(true)}>
             quick view
-          </div>
+          </motion.div>
           <Link
             to={`/shop/${productRoute}`}
             className="go-to-product d-flex align-center justify-center"
@@ -47,9 +48,14 @@ const ProductItem = ({
 
         <div className="product-content d-flex flex-column">
           <span className="category">{category}</span>
-          <Link to={`/shop/${productRoute}`} className="product-name">
-            {productName}
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.2, originX: 0 }}
+            transition={{ type: "spring", stiffness: "tween" }}
+          >
+            <Link to={`/shop/${productRoute}`} className="product-name">
+              {productName}
+            </Link>
+          </motion.div>
           <div className="product-rating">
             <FaStar />
             <FaStar />

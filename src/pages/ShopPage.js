@@ -8,6 +8,8 @@ import { BsFillGrid3X3GapFill, BsFillGrid1X2Fill } from "react-icons/bs";
 
 import POPULAR_PRODUCTS from "../data/popular_products";
 import ProductItem from "../components/ProductItem";
+import { motion } from "framer-motion";
+import routeMotion from "../motion/RouteMotion";
 // import ProductModal from "../components/ProductModal";
 
 const ShopPage = () => {
@@ -21,7 +23,7 @@ const ShopPage = () => {
   };
 
   return (
-    <>
+    <motion.div variants={routeMotion} initial="hidden" animate="visiable" exit="exit">
       <Navbar />
       <PageHeader prev="home" current="shop" />
       <div className="shop-page-wrapper container">
@@ -165,7 +167,7 @@ const ShopPage = () => {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
 

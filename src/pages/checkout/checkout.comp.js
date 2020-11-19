@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import CartProduct from "../../components/cart-product/cart-product.comp";
 import CustomButton from "../../components/custom-button/custom-button.comp";
@@ -5,6 +6,7 @@ import CustomForm from "../../components/CustomForm";
 import CustomInput from "../../components/CustomInput";
 import Navbar from "../../components/Navbar";
 import PageHeader from "../../components/PageHeader";
+import routeMotion from "../../motion/RouteMotion";
 
 import { Wrapper, SideTitle, CartTotal } from "./checkout.styles";
 
@@ -14,7 +16,7 @@ const Checkout = () => {
   const [password, setPassword] = useState("");
 
   return (
-    <>
+    <motion.div variants={routeMotion} initial="hidden" animate="visiable" exit="exit">
       <Navbar />
       <PageHeader prev="Home" next="Shop" current="checkout" />
       <Wrapper>
@@ -58,7 +60,7 @@ const Checkout = () => {
           <CartTotal>Total: $400.00</CartTotal>
         </div>
       </Wrapper>
-    </>
+    </motion.div>
   );
 };
 

@@ -1,15 +1,17 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { Link } from "react-router-dom";
 
 import Img from "../../assets/images/category-item-1.jpg";
 import Navbar from "../../components/Navbar";
 import PageHeader from "../../components/PageHeader";
+import routeMotion from "../../motion/RouteMotion";
 
 const CartPage = () => {
   return (
-    <>
+    <motion.div variants={routeMotion} initial="hidden" animate="visiable" exit="exit">
       <Navbar />
-      <PageHeader prev="Home" next="Shop" current="cart" />
+      <PageHeader prev="Home" next="cart" current="shop" />
       <div className="cart-page-wrapper container">
         <div className="cart-page-content-wrapper font">
           <div className="cart-page-content">
@@ -92,7 +94,7 @@ const CartPage = () => {
           </ul>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
 

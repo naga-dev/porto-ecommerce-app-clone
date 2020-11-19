@@ -1,30 +1,25 @@
 import React from "react";
 import Navbar from "./Navbar";
 import PageHeader from "./PageHeader";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaStar,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaStar, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ShopTabSection from "./ShopTabSection";
 import RelatedProductsSection from "./RelatedProductsSection";
 import ProductsBlockColumns from "./ProductsBlockColumns";
 
 import POPULAR_PRODUCTS from "../data/popular_products";
+import { motion } from "framer-motion";
+import routeMotion from "../motion/RouteMotion";
 
 const ProductPage = ({ match }) => {
   const { params } = match;
-  const currentProduct = POPULAR_PRODUCTS.map((item) => item).filter(
-    (item) =>
-      item.productName.toLowerCase().replace(/ /g, "-") === params.product
+  const currentProduct = POPULAR_PRODUCTS.map(item => item).filter(
+    item => item.productName.toLowerCase().replace(/ /g, "-") === params.product
   );
   const { productName, imgUrl, price } = currentProduct[0];
 
   return (
-    <>
+    <motion.div variants={routeMotion} initial="hidden" animate="visiable" exit="exit">
       <Navbar />
       <PageHeader prev="home" current="shop" next="product name" />
       <div className="single-product-page-wrapper container">
@@ -37,10 +32,7 @@ const ProductPage = ({ match }) => {
 
           {/* Product details */}
           <div className="product-details-wrapper">
-            <div
-              className="m-b-10 font-500 f-size-25"
-              style={{ color: "#222529" }}
-            >
+            <div className="m-b-10 font-500 f-size-25" style={{ color: "#222529" }}>
               {productName}
             </div>
             <div className="product-rating">
@@ -56,36 +48,26 @@ const ProductPage = ({ match }) => {
             </div>
 
             <div className="product-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea facere
-              non repellat nemo quasi sit eveniet fugit in id corrupti sequi
-              praesentium quisquam, qui consequatur velit corporis quo ab
-              dolores?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea facere non repellat nemo
+              quasi sit eveniet fugit in id corrupti sequi praesentium quisquam, qui consequatur
+              velit corporis quo ab dolores?
             </div>
 
             <div className="m-b-10">
               <div>
-                <span
-                  className="font-300 m-r-5 f-size-14"
-                  style={{ color: "#000" }}
-                >
+                <span className="font-300 m-r-5 f-size-14" style={{ color: "#000" }}>
                   sku:
                 </span>
                 <span className="f-size-14 font-400">654111995-1-1-2</span>
               </div>
               <div>
-                <span
-                  className="font-300 m-r-5 f-size-14"
-                  style={{ color: "#000" }}
-                >
+                <span className="font-300 m-r-5 f-size-14" style={{ color: "#000" }}>
                   categories:
                 </span>
                 <span className="f-size-14 font-400">bags, t-shirt</span>
               </div>
               <div>
-                <span
-                  className="font-300 m-r-5 f-size-14"
-                  style={{ color: "#000" }}
-                >
+                <span className="font-300 m-r-5 f-size-14" style={{ color: "#000" }}>
                   tags:
                 </span>
                 <span className="f-size-14 font-400">clothes, fashion</span>
@@ -152,7 +134,7 @@ const ProductPage = ({ match }) => {
         <RelatedProductsSection />
         <ProductsBlockColumns />
       </div>
-    </>
+    </motion.div>
   );
 };
 
