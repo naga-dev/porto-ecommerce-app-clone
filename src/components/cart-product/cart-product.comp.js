@@ -1,7 +1,5 @@
 import React from "react";
 
-import Img from "../../assets/images/category-item-1.jpg";
-
 import {
   Content,
   Price,
@@ -12,17 +10,18 @@ import {
   RemoveItem,
 } from "./cart-product.styles";
 
-const CartProduct = () => {
+const CartProduct = ({ item }) => {
+  const { productName, price, imgUrl } = item;
   return (
     <>
       <Wrapper>
         <Content>
-          <Title>Men Cap - Indigo, Extra Large </Title>
-          <Price>3 X $100.00</Price>
+          <Title>{productName}</Title>
+          <Price>3 X ${price}</Price>
         </Content>
 
         <ProductImgWrapper>
-          <ProductImg src={Img} />
+          <ProductImg src={imgUrl} />
           <RemoveItem>X</RemoveItem>
         </ProductImgWrapper>
       </Wrapper>

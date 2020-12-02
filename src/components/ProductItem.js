@@ -3,19 +3,13 @@ import { Link } from "react-router-dom";
 import { FaLongArrowAltRight, FaStar } from "react-icons/fa";
 import ProductModal from "./ProductModal";
 import { motion } from "framer-motion";
+import { connect } from "react-redux";
+import { AddItems } from "../redux/shopping-cart/shopping-cart.actions";
 
-const ProductItem = ({
-  category,
-  productName,
-  price,
-  imgUrl,
-  secondImgUr,
-  isHot,
-  isDiscount,
-  view,
-}) => {
+const ProductItem = ({ item, view, addItems }) => {
   const [originalImg, setOriginalImg] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const { category, productName, price, imgUrl, secondImgUr, isHot, isDiscount } = item;
 
   // Clean up product name with URL
   const productRoute = productName.toLowerCase().replace(/ /g, "-");
@@ -70,27 +64,23 @@ const ProductItem = ({
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore similique voluptate
                 nostrum necessitatibus sequi, iure cupiditate ducimus facilis dolor! Vero.
               </p>
-              <button className="add-to-card-btn d-flex align-center justify-center">
+              <button
+                className="add-to-card-btn d-flex align-center justify-center"
+                onClick={() => addItems(item)}
+              >
                 Add to card
               </button>
             </>
           )}
         </div>
       </div>
-      {showModal && (
-        <ProductModal
-          category={category}
-          productName={productName}
-          price={price}
-          imgUrl={imgUrl}
-          secondImgUr={secondImgUr}
-          isHot={isHot}
-          isDiscount={isDiscount}
-          closeModal={() => setShowModal(false)}
-        />
-      )}
+      {showModal && <ProductModal item={item} closeModal={() => setShowModal(false)} />}
     </>
   );
 };
 
-export default ProductItem;
+const mapDispatchToProps = dispatch => ({
+  addItems: item => dispatch(AddItems(item)),
+});
+
+export default connect(null, mapDispatchToProps)(ProductItem);

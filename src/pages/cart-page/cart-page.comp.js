@@ -1,22 +1,14 @@
 import { motion } from "framer-motion";
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-import Img from "../../assets/images/category-item-1.jpg";
 import Navbar from "../../components/Navbar";
 import PageHeader from "../../components/PageHeader";
 import routeMotion from "../../motion/RouteMotion";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { connect } from "react-redux";
 
-const CartPage = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 2000,
-    });
-  }, []);
-
+const CartPage = ({ cartItems }) => {
   return (
     <motion.div variants={routeMotion} initial="hidden" animate="visiable" exit="exit">
       <Navbar />
@@ -25,44 +17,56 @@ const CartPage = () => {
         <div className="cart-page-content-wrapper font">
           <div className="cart-page-content">
             <h3>
-              your cart <span className="items-count-in-shopping-cart">(1 items)</span>
+              your cart{" "}
+              <span className="items-count-in-shopping-cart">({cartItems.length} items)</span>
             </h3>
           </div>
 
-          <div className="shopping-cart-table" data-aos="fade-left">
-            <table>
-              <thead>
-                <tr>
-                  <th>item</th>
-                  <th>price</th>
-                  <th>quantity</th>
-                  <th>total</th>
-                  <th>remove</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <img src={Img} alt="" style={{ width: "100px" }} />
-                  </td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>
-                    <span
-                      style={{
-                        cursor: "pointer",
-                        color: "red",
-                        fontSize: "20px",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      X
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="shopping-cart-table">
+            {cartItems.length ? (
+              <table>
+                <thead>
+                  <tr>
+                    <th>item</th>
+                    <th>price</th>
+                    <th>quantity</th>
+                    <th>total</th>
+                    <th>remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {cartItems.map(({ imgUrl, price }, idx) => (
+                    <tr key={idx}>
+                      <td>
+                        <img src={imgUrl} alt="" style={{ width: "100px" }} />
+                      </td>
+                      <td>${price}</td>
+                      <td>1</td>
+                      <td>100</td>
+                      <td>
+                        <span
+                          style={{
+                            cursor: "pointer",
+                            color: "red",
+                            fontSize: "20px",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          X
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <h2>
+                No items in your cart, continue{" "}
+                <Link to="/shop" style={{ color: "red" }}>
+                  Shopping
+                </Link>
+              </h2>
+            )}
           </div>
         </div>
 
@@ -74,7 +78,7 @@ const CartPage = () => {
           "4242 4242 4242 4242" - EXP: 11 / 20 - CVV: 123
         </div>
 
-        <div className="proceed-to-checkout" data-aos="zoom-out">
+        <div className="proceed-to-checkout">
           <ul className="proceed-to-checkout-list">
             <li>
               <span>Subtotal:</span>
@@ -107,4 +111,7 @@ const CartPage = () => {
   );
 };
 
-export default CartPage;
+const mapStateToProps = ({ cart: { cartItems } }) => ({
+  cartItems,
+});
+export default connect(mapStateToProps)(CartPage);

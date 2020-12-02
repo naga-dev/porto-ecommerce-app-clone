@@ -170,7 +170,7 @@ const ShopPage = () => {
 
           <div className="m-t-30" style={wrapperStyle}>
             {POPULAR_PRODUCTS.map(item => (
-              <ProductItem key={item.id} {...item} view={view} />
+              <ProductItem key={item.id} item={item} view={view} />
             ))}
           </div>
         </div>

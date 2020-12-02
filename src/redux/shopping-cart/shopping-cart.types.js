@@ -1,0 +1,5 @@
+const SHOPPING_CART_TYPES = {
+  ADD_ITEMS_TO_CART: "ADD_ITEMS_TO_CART",
+};
+
+export default SHOPPING_CART_TYPES;

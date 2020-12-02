@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 
 import { motion, AnimatePresence } from "framer-motion";
 
+import { connect } from "react-redux";
+import { AddItems } from "../redux/shopping-cart/shopping-cart.actions";
+
 const modalMotion = {
   hidden: {
     opacity: 0,
@@ -16,16 +19,10 @@ const modalMotion = {
   },
 };
 
-const ProductModal = ({
-  category,
-  productName,
-  price,
-  imgUrl,
-  secondImgUr,
-  isHot,
-  isDiscount,
-  closeModal,
-}) => {
+const ProductModal = ({ item, addItem, closeModal }) => {
+  const { productName, price, imgUrl, secondImgUr } = item;
+  console.log(item);
+
   const handleSubmit = e => {
     e.preventDefault();
   };
@@ -128,7 +125,9 @@ const ProductModal = ({
                     <span className="quantity">1</span>
                     <button className="descrese-quantity">-</button>
                   </div>
-                  <button className="add-to-card-btn">add to cart</button>
+                  <button className="add-to-card-btn" onClick={() => addItem(item)}>
+                    add to cart
+                  </button>
                 </form>
               </div>
 
@@ -159,4 +158,8 @@ const ProductModal = ({
   );
 };
 
-export default ProductModal;
+const mapDispatchToProps = dispatch => ({
+  addItem: item => dispatch(AddItems(item)),
+});
+
+export default connect(null, mapDispatchToProps)(ProductModal);

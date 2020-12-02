@@ -27,7 +27,7 @@ const PopularProducts = () => {
   }, []);
 
   return (
-    <div className="container" data-aos="zoom-in">
+    <div className="container" data-aos="zoom-in" style={{ marginTop: "180px" }}>
       <h3 style={title}>Popular products</h3>
       <div className="grid-content" style={wrapperStyle}>
         {POPULAR_PRODUCTS.map(item => (

@@ -12,7 +12,7 @@ import CardDropDownMenu from "../components/CardDropDownMenu";
 import { connect } from "react-redux";
 import { togglecartSidebar } from "../redux/cart-menu/cart-sidebar.actions";
 
-const Navbar = ({ position, showCartSidebar }) => {
+const Navbar = ({ position, showCartSidebar, cartItems }) => {
   return (
     <div className="app-navbar-wrapper d-flex align-center justify-between" style={{ position }}>
       {/* Left Side */}
@@ -52,7 +52,7 @@ const Navbar = ({ position, showCartSidebar }) => {
         </li>
         <li className="card-drop-down-wrapper" onClick={showCartSidebar}>
           <CartIcon />
-          <span className="count">0</span>
+          <span className="count">{cartItems.length}</span>
           <CardDropDownMenu />
         </li>
       </ul>
@@ -61,8 +61,9 @@ const Navbar = ({ position, showCartSidebar }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  hidden: state.cartSidebar.hidden,
+const mapStateToProps = ({ cartSidebar: { hidden }, cart: { cartItems } }) => ({
+  hidden,
+  cartItems,
 });
 
 const mapDispatchToProps = dispatch => ({
