@@ -18,11 +18,15 @@ firebase.initializeApp(firebaseConfig);
 export const createUserProfileDoc = async (user, additionalData) => {
   if (!user) return;
 
+  // User query reference
   const userRef = firestore.doc(`users/${user.uid}`);
-  const snapShot = await userRef.get();
+  /**
+   * snapShot represents get(), set(), update() and delete()
+   */
+  const userSnapShot = await userRef.get();
 
-  // check if user exit or not, if not create it
-  if (!snapShot.exists) {
+  // Create user document if not exists
+  if (!userSnapShot.exists) {
     const { displayName, email } = user;
     const createdAt = new Date();
 
@@ -37,6 +41,8 @@ export const createUserProfileDoc = async (user, additionalData) => {
       console.log("Error while creating user", error.message);
     }
   }
+
+  return userRef;
 };
 
 const provider = new firebase.auth.GoogleAuthProvider();

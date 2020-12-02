@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 
-import { auth } from "./firebase";
+import { auth, createUserProfileDoc } from "./firebase";
 
 import { AnimatePresence } from "framer-motion";
 
@@ -23,11 +23,19 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    auth.onAuthStateChanged(user => {
-      setUser(user);
+    auth.onAuthStateChanged(async user => {
+      if (user) {
+        const userRef = await createUserProfileDoc(user);
+        userRef.onSnapshot(snapshot => {
+          setUser({
+            id: snapshot.id,
+            ...snapshot.data(),
+          });
+        });
+      }
     });
-    console.log(user);
   });
+
   return (
     <div className="App">
       <CartSidebar />

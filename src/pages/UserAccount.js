@@ -6,17 +6,19 @@ import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/custom-button/custom-button.comp";
 import { motion } from "framer-motion";
 import routeMotion from "../motion/RouteMotion";
-import { auth, sighInWithGoogle } from "../firebase";
+import { auth, createUserProfileDoc, sighInWithGoogle } from "../firebase";
 
 const UserAccount = ({ user }) => {
-  const [loginEmail, setEmail] = useState("");
-  const [registerEmail, setRegisterEmail] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
   const [loginPpassword, setLoginPassword] = useState("");
+
+  const [displayName, setDisplayName] = useState("");
+  const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   // Handle sign up
-  const handleSignUpSubmit = async e => {
+  const handleSignUp = async e => {
     e.preventDefault();
 
     // Check if passwords matched or not
@@ -26,15 +28,31 @@ const UserAccount = ({ user }) => {
     }
 
     try {
-      await auth.createUserWithEmailAndPassword(registerEmail, registerPassword);
+      const { user } = await auth.createUserWithEmailAndPassword(registerEmail, registerPassword);
+      await createUserProfileDoc(user, { displayName });
     } catch (error) {
       console.error(error);
     }
 
     // Empty all fields after submit
+    setDisplayName("");
     setRegisterEmail("");
     setRegisterPassword("");
     setConfirmPassword("");
+  };
+
+  const handleSignIn = async e => {
+    e.preventDefault();
+
+    try {
+      await auth.signInWithEmailAndPassword(loginEmail, loginPpassword);
+
+      // Clear fields
+      setLoginEmail("");
+      setLoginPassword("");
+    } catch (error) {
+      console.log("Error While siggin in wight Email and Password", error.message);
+    }
   };
 
   return (
@@ -59,14 +77,14 @@ const UserAccount = ({ user }) => {
           >
             <h4 style={{ marginBottom: "20px" }}>Login</h4>
             <>
-              <CustomForm>
+              <CustomForm handleSubmit={handleSignIn}>
                 <CustomInput
                   type="email"
                   id="loginEmail"
-                  label="Username or email address"
+                  label="DisplayName or email address"
                   name="email"
                   value={loginEmail}
-                  handleChange={e => setEmail(e.target.value)}
+                  handleChange={e => setLoginEmail(e.target.value)}
                 />
                 <CustomInput
                   type="password"
@@ -88,7 +106,15 @@ const UserAccount = ({ user }) => {
             transition={{ delay: 0.6, stiffness: 120 }}
           >
             <h4 style={{ marginBottom: "20px" }}>Register</h4>
-            <CustomForm handleSubmit={handleSignUpSubmit}>
+            <CustomForm handleSubmit={handleSignUp}>
+              <CustomInput
+                type="text"
+                id="displayName"
+                label="Display Name"
+                name="displayName"
+                value={displayName}
+                handleChange={e => setDisplayName(e.target.value)}
+              />
               <CustomInput
                 type="email"
                 id="registerEmail"
