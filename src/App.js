@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
+
+import { auth } from "./firebase";
 
 import { AnimatePresence } from "framer-motion";
 
@@ -14,9 +16,18 @@ import UserAccount from "./pages/UserAccount";
 import CartSidebar from "./components/cart-sidebar/cart-sidebar.comp";
 import Checkout from "./pages/checkout/checkout.comp";
 import CartPage from "./pages/cart-page/cart-page.comp";
+import { useEffect } from "react";
 
 function App() {
+  const [user, setUser] = useState(null);
   const location = useLocation();
+
+  useEffect(() => {
+    auth.onAuthStateChanged(user => {
+      setUser(user);
+    });
+    console.log(user);
+  });
   return (
     <div className="App">
       <CartSidebar />
@@ -25,7 +36,7 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/shop" component={ShopPage} />
           <Route path="/shop/:product" render={routeProps => <ProductPage {...routeProps} />} />
-          <Route path="/user/account" component={UserAccount} />
+          <Route path="/user/account" render={() => <UserAccount user={user} />} />
           <Route path="/cart" component={CartPage} />
           <Route path="/checkout" component={Checkout} />
           <Route path="/test" component={TextPage} />
@@ -37,7 +48,3 @@ function App() {
 }
 
 export default App;
-
-// TODO
-// Animate your app
-// Move from SCSS
