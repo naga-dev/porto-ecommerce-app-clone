@@ -24,8 +24,6 @@ const Checkout = ({ cartItems }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  console.log(cartItems.lenght);
-
   return (
     <motion.div
       variants={routeMotion}
@@ -36,7 +34,11 @@ const Checkout = ({ cartItems }) => {
       <Navbar />
       <PageHeader prev="Home" next="Shop" current="checkout" />
       <Wrapper>
-        <div>
+        <motion.div
+          initial={{ x: "-100vw" }}
+          animate={{ x: 0 }}
+          transition={{ delay: 0.5 }}
+        >
           <SideTitle>Fill Form</SideTitle>
           <CustomForm>
             <CustomInput
@@ -71,9 +73,13 @@ const Checkout = ({ cartItems }) => {
               color="#fff"
             />
           </CustomForm>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          initial={{ x: "100vw" }}
+          animate={{ x: 0 }}
+          transition={{ delay: 0.7 }}
+        >
           <SideTitle>Your Orders</SideTitle>
 
           {cartItems.length < 1 ? (
@@ -86,7 +92,7 @@ const Checkout = ({ cartItems }) => {
           )}
 
           <CartTotal>Total: ${!cartItems.lenght ? "0.00" : "400"}</CartTotal>
-        </div>
+        </motion.div>
       </Wrapper>
     </motion.div>
   );

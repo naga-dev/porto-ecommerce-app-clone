@@ -1,3 +1,4 @@
+import addItemToCart from "./shoping-cart.utils";
 import SHOPPING_CART_TYPES from "./shopping-cart.types";
 
 const INITIAL_STATE = {
@@ -9,7 +10,7 @@ const shoppingCartReducer = (state = INITIAL_STATE, action) => {
     case SHOPPING_CART_TYPES.ADD_ITEMS_TO_CART:
       return {
         ...state,
-        cartItems: [...state.cartItems, action.payload],
+        cartItems: addItemToCart(state.cartItems, action.payload),
       };
     default:
       return state;

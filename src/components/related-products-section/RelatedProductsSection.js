@@ -4,10 +4,6 @@ import React from "react";
 import POPULAR_PRODUCTS from "../../data/popular_products";
 import ProductItem from "../product-item/ProductItem";
 
-// Swiper
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper.scss";
-
 const RelatedProductsSection = () => {
   // JSS
   const wrapper = {
@@ -21,50 +17,21 @@ const RelatedProductsSection = () => {
     paddingTop: "20px",
   };
 
-  // Swiper config
-  const swiperConfig = {
-    autoplay: {
-      delay: 5000,
-    },
-    breakpoints: {
-      // when window width is >= 320px
-      100: {
-        slidesPerView: 1,
-      },
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 1,
-      },
-      // when window width is >= 480px
-      480: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      // when window width is >= 640px
-      640: {
-        slidesPerView: 4,
-        spaceBetween: 20,
-      },
-      767: {
-        slidesPerView: 5,
-        spaceBetween: 20,
-      },
-    },
-  };
-
   return (
     <div style={wrapper}>
       <h4 style={title}>Related Products</h4>
       <div style={contentWrapper}></div>
-      <Swiper {...swiperConfig} slidesPerView={5} autoplay>
-        {POPULAR_PRODUCTS.map(item => {
-          return (
-            <SwiperSlide key={item.id}>
-              <ProductItem {...item} />
-            </SwiperSlide>
-          );
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+          gap: "20px",
+        }}
+      >
+        {POPULAR_PRODUCTS.filter((item, idx) => idx < 5).map(item => {
+          return <ProductItem {...item} item={item} />;
         })}
-      </Swiper>
+      </div>
     </div>
   );
 };
