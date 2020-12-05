@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
-import POPULAR_PRODUCTS from "../data/popular_products";
-import ProductItem from "./ProductItem";
+import React from "react";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
+// Dummy Data
+import POPULAR_PRODUCTS from "../../data/popular_products";
 
+// Components
+import ProductItem from "../product-item/ProductItem";
+
+// JSS (Javascript in style)
 const wrapperStyle = {
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
@@ -20,18 +22,12 @@ const title = {
 };
 
 const PopularProducts = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 3000,
-    });
-  }, []);
-
   return (
-    <div className="container" data-aos="zoom-in" style={{ marginTop: "180px" }}>
+    <div className="container" style={{ marginTop: "180px" }}>
       <h3 style={title}>Popular products</h3>
       <div className="grid-content" style={wrapperStyle}>
         {POPULAR_PRODUCTS.map(item => (
-          <ProductItem key={item.id} {...item} item={item} />
+          <ProductItem key={item.id} item={item} {...item} />
         ))}
       </div>
     </div>

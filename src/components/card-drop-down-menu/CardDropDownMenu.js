@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import img from "../assets/images/category-item-1.jpg";
+// Assets
+import img from "../../assets/images/category-item-1.jpg";
 
 const CartDropDownMenu = ({ toggleProductCart }) => {
   return (

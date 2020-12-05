@@ -1,16 +1,25 @@
-import { motion } from "framer-motion";
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Navbar from "../../components/Navbar";
-import PageHeader from "../../components/PageHeader";
+// Components
+import Navbar from "../../components/navbar/Navbar";
+import PageHeader from "../../components/page-header/PageHeader";
+
+// Framer motion
+import { motion } from "framer-motion";
 import routeMotion from "../../motion/RouteMotion";
 
+// Redux
 import { connect } from "react-redux";
 
 const CartPage = ({ cartItems }) => {
   return (
-    <motion.div variants={routeMotion} initial="hidden" animate="visiable" exit="exit">
+    <motion.div
+      variants={routeMotion}
+      initial="hidden"
+      animate="visiable"
+      exit="exit"
+    >
       <Navbar />
       <PageHeader prev="Home" next="cart" current="shop" />
       <div className="cart-page-wrapper container">
@@ -18,7 +27,9 @@ const CartPage = ({ cartItems }) => {
           <div className="cart-page-content">
             <h3>
               your cart{" "}
-              <span className="items-count-in-shopping-cart">({cartItems.length} items)</span>
+              <span className="items-count-in-shopping-cart">
+                ({cartItems.length} items)
+              </span>
             </h3>
           </div>
 

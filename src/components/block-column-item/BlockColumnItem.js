@@ -1,4 +1,6 @@
 import React from "react";
+
+// Assets
 import { FaStar } from "react-icons/fa";
 
 const BlockColumnItem = ({ item }) => {

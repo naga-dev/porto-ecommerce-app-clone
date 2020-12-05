@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+
+// Assets
 import { MdDone } from "react-icons/md";
 
 const ShopTabSection = () => {
   const [activeTab, setActivetab] = useState("description");
+
   return (
     <>
       {/* Tabs content */}

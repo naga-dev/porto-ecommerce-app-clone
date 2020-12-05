@@ -1,6 +1,8 @@
 import React from "react";
-import { FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
+// Assets
+import { FaChevronRight } from "react-icons/fa";
 
 const PageLandingHeader = ({ title }) => {
   const wrapper = {
@@ -44,7 +46,9 @@ const PageLandingHeader = ({ title }) => {
             Shop
           </Link>
         </li>
-        <FaChevronRight style={{ ...navigationList.icons, marginRight: "10px" }} />
+        <FaChevronRight
+          style={{ ...navigationList.icons, marginRight: "10px" }}
+        />
         <span style={navigationList.currentLink}>My Account</span>
       </ul>
       <h3>{title}</h3>

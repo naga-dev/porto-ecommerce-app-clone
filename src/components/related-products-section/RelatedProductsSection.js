@@ -1,14 +1,12 @@
 import React from "react";
+
+// Components
+import POPULAR_PRODUCTS from "../../data/popular_products";
+import ProductItem from "../product-item/ProductItem";
+
+// Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-// import SwiperCore, { Autoplay, EffectFade } from "swiper";
-
-import POPULAR_PRODUCTS from "../data/popular_products";
-import ProductItem from "./ProductItem";
-
-// Import Swiper styles
 import "swiper/swiper.scss";
-
-// SwiperCore.use([Autoplay, EffectFade]);
 
 const RelatedProductsSection = () => {
   // JSS

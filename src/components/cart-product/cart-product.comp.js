@@ -12,6 +12,7 @@ import {
 
 const CartProduct = ({ item }) => {
   const { productName, price, imgUrl } = item;
+
   return (
     <>
       <Wrapper>

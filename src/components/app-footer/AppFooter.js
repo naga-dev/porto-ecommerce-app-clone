@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Assets
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const AppFooter = () => {
@@ -33,26 +34,26 @@ const AppFooter = () => {
         <div className="column">
           <div className="title font-700 f-size-15 m-b-15">contact info</div>
           <div className="column-item d-flex flex-column">
-            <span className="f-size-14 font-300">address</span>
+            <span className="f-size-12 font-300">address</span>
             <span>1234 Street Name, City, England</span>
           </div>
           <div className="column-item d-flex flex-column">
-            <span className="f-size-14 font-300">email</span>
+            <span className="f-size-12 font-300">email</span>
             <span>mail@example.com</span>
           </div>
           <div className="column-item d-flex flex-column">
-            <span className="f-size-14 font-300">phone</span>
+            <span className="f-size-12 font-300">phone</span>
             <span>(123) 456-7890</span>
           </div>
           <div className="column-item d-flex flex-column">
-            <span className="f-size-14 font-300">WORKING DAYS/HOURS:</span>
+            <span className="f-size-12 font-300">WORKING DAYS/HOURS:</span>
             <span>Mon - Sun / 9:00 AM - 8:00 PM</span>
           </div>
         </div>
         <div className="column">
           <div className="title font-700 f-size-15 m-b-15">my account</div>
           <div className="column-item d-flex flex-column">
-            <Link to="#" className="f-size-14 font-300">
+            <Link to="#" className="f-size-12 font-300">
               about us
             </Link>
             <Link to="#" className="f-size-14 font-300">

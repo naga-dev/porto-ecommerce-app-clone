@@ -1,5 +1,7 @@
 import React from "react";
-import BlockColumnsWrap from "./BlockColumnsWrap";
+
+// components
+import BlockColumnsWrap from "../block-column-wrap/BlockColumnsWrap";
 
 const ProductsBlockColumns = () => {
   const blockWrapper = {

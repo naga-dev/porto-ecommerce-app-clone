@@ -1,12 +1,18 @@
 import React, { useState } from "react";
-import Navbar from "../components/Navbar";
-import PageLandingHeader from "../components/PageLandingHeader";
-import CustomForm from "../components/CustomForm";
-import CustomInput from "../components/CustomInput";
+
+// Components
+import Navbar from "../components/navbar/Navbar";
+import PageLandingHeader from "../components/page-landing-header/PageLandingHeader";
+import CustomForm from "../components/custom-form/CustomForm";
+import CustomInput from "../components/custom-input/CustomInput";
 import CustomButton from "../components/custom-button/custom-button.comp";
+
+// Firebase
+import { auth, createUserProfileDoc, sighInWithGoogle } from "../firebase";
+
+// Framer motion
 import { motion } from "framer-motion";
 import routeMotion from "../motion/RouteMotion";
-import { auth, createUserProfileDoc, sighInWithGoogle } from "../firebase";
 
 const UserAccount = ({ user }) => {
   const [loginEmail, setLoginEmail] = useState("");
@@ -28,7 +34,10 @@ const UserAccount = ({ user }) => {
     }
 
     try {
-      const { user } = await auth.createUserWithEmailAndPassword(registerEmail, registerPassword);
+      const { user } = await auth.createUserWithEmailAndPassword(
+        registerEmail,
+        registerPassword
+      );
       await createUserProfileDoc(user, { displayName });
     } catch (error) {
       console.error(error);
@@ -51,19 +60,30 @@ const UserAccount = ({ user }) => {
       setLoginEmail("");
       setLoginPassword("");
     } catch (error) {
-      console.log("Error While siggin in wight Email and Password", error.message);
+      console.log(
+        "Error While siggin in wight Email and Password",
+        error.message
+      );
     }
   };
 
   return (
-    <motion.div variants={routeMotion} initial="hidden" animate="visiable" exit="exit">
+    <motion.div
+      variants={routeMotion}
+      initial="hidden"
+      animate="visiable"
+      exit="exit"
+    >
       <Navbar />
       <PageLandingHeader title="My Account" />
 
       {user ? (
         <h1 style={{ margin: "40px 0", textAlign: "center" }}>
-          Your has been logged in,{" "}
-          <span style={{ cursor: "pointer", color: "red" }} onClick={() => auth.signOut()}>
+          Your have been logged in,{" "}
+          <span
+            style={{ cursor: "pointer", color: "red" }}
+            onClick={() => auth.signOut()}
+          >
             Logout
           </span>
         </h1>
@@ -94,7 +114,12 @@ const UserAccount = ({ user }) => {
                   value={loginPpassword}
                   handleChange={e => setLoginPassword(e.target.value)}
                 />
-                <CustomButton title="login" type="submit" backgroud="#222529" color="#fff" />
+                <CustomButton
+                  title="login"
+                  type="submit"
+                  backgroud="#222529"
+                  color="#fff"
+                />
               </CustomForm>
             </>
           </motion.div>
@@ -146,7 +171,12 @@ const UserAccount = ({ user }) => {
                 </span>
               </p>
 
-              <CustomButton title="register" type="submit" backgroud="#222529" color="#fff" />
+              <CustomButton
+                title="register"
+                type="submit"
+                backgroud="#222529"
+                color="#fff"
+              />
             </CustomForm>
           </motion.div>
         </div>

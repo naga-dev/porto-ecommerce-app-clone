@@ -1,9 +1,14 @@
 import React from "react";
-import CartProduct from "../cart-product/cart-product.comp";
+
+// Assets
 import { Close, Sidebar, Title, Wrapper } from "./cart-sidebar.styles";
 
+// Redux stuff
 import { connect } from "react-redux";
 import { togglecartSidebar } from "../../redux/cart-menu/cart-sidebar.actions";
+
+// Components
+import CartProduct from "../cart-product/cart-product.comp";
 import CustomLink from "../custom-link/custom-link.comp";
 
 const CartSidebar = ({ hideSidebar, hidden, cartItems }) => {
@@ -14,16 +19,30 @@ const CartSidebar = ({ hideSidebar, hidden, cartItems }) => {
           <Sidebar>
             <Title>Shopping cart</Title>
             {cartItems.length < 1 ? (
-              <h3 style={{ marginBottom: "40px", color: "#7b7b7b" }}>No items in your cart</h3>
+              <h3 style={{ marginBottom: "40px", color: "#7b7b7b" }}>
+                No items in your cart
+              </h3>
             ) : (
-              cartItems.map((item, idx) => <CartProduct key={idx} item={item} />)
+              cartItems
+                .filter((item, idx) => idx < 3)
+                .map((item, idx) => <CartProduct key={idx} item={item} />)
             )}
 
             <div onClick={hideSidebar}>
-              <CustomLink path="/cart" title="view cart" backgroud="#e7e7e7" color="#000" />
+              <CustomLink
+                path="/cart"
+                title="view cart"
+                backgroud="#e7e7e7"
+                color="#000"
+              />
             </div>
             <div onClick={hideSidebar}>
-              <CustomLink path="/checkout" title="checkout" backgroud="#222529" color="#fff" />
+              <CustomLink
+                path="/checkout"
+                title="checkout"
+                backgroud="#222529"
+                color="#fff"
+              />
             </div>
 
             <Close onClick={hideSidebar}>X</Close>

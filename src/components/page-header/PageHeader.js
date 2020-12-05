@@ -1,6 +1,8 @@
 import React from "react";
-import { FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
+// Assets
+import { FaChevronRight } from "react-icons/fa";
 
 const PageHeader = ({ prev, current, next }) => {
   const wrapper = {

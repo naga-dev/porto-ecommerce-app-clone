@@ -1,20 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Utils
-import Logo from "../assets/images/logo.png";
-import { ReactComponent as SearchIcon } from "../assets/svg/loupe.svg";
-import { ReactComponent as UserIcon } from "../assets/svg/user.svg";
-import { ReactComponent as CartIcon } from "../assets/svg/bag.svg";
-import { ReactComponent as MenuIcon } from "../assets/svg/menu.svg";
+// Assets
+import Logo from "../../assets/images/logo.png";
+import { ReactComponent as UserIcon } from "../../assets/svg/user.svg";
+import { ReactComponent as CartIcon } from "../../assets/svg/bag.svg";
+import { ReactComponent as MenuIcon } from "../../assets/svg/menu.svg";
 
-import CardDropDownMenu from "../components/CardDropDownMenu";
+// Components
+import CardDropDownMenu from "../card-drop-down-menu/CardDropDownMenu";
+
+// Redux
 import { connect } from "react-redux";
-import { togglecartSidebar } from "../redux/cart-menu/cart-sidebar.actions";
+import { togglecartSidebar } from "../../redux/cart-menu/cart-sidebar.actions";
 
 const Navbar = ({ position, showCartSidebar, cartItems }) => {
   return (
-    <div className="app-navbar-wrapper d-flex align-center justify-between" style={{ position }}>
+    <div
+      className="app-navbar-wrapper d-flex align-center justify-between"
+      style={{ position }}
+    >
       {/* Left Side */}
       <Link to="/" className="app-logo">
         <img src={Logo} alt="logo" />
@@ -40,11 +45,6 @@ const Navbar = ({ position, showCartSidebar, cartItems }) => {
 
       {/* Right Side */}
       <ul className="left-side-wrapper d-flex align-center">
-        <li>
-          <Link to="#">
-            <SearchIcon />
-          </Link>
-        </li>
         <li>
           <Link to="/user/account">
             <UserIcon />

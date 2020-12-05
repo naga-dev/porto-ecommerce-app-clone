@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 
+// Firebase
 import { auth, createUserProfileDoc } from "./firebase";
 
+// Framer motion
 import { AnimatePresence } from "framer-motion";
 
+// Styles
 import "./scss/App.scss";
 
-import ProductPage from "./components/ProductPage";
-import AppFooter from "./components/AppFooter";
+// Components
+import ProductPage from "./components/product-page/ProductPage";
+import AppFooter from "./components/app-footer/AppFooter";
 import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
 import TextPage from "./pages/TextPage";
@@ -43,8 +47,14 @@ function App() {
         <Switch location={location} key={location.key}>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/shop" component={ShopPage} />
-          <Route path="/shop/:product" render={routeProps => <ProductPage {...routeProps} />} />
-          <Route path="/user/account" render={() => <UserAccount user={user} />} />
+          <Route
+            path="/shop/:product"
+            render={routeProps => <ProductPage {...routeProps} />}
+          />
+          <Route
+            path="/user/account"
+            render={() => <UserAccount user={user} />}
+          />
           <Route path="/cart" component={CartPage} />
           <Route path="/checkout" component={Checkout} />
           <Route path="/test" component={TextPage} />
