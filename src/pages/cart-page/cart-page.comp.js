@@ -11,8 +11,10 @@ import routeMotion from "../../motion/RouteMotion";
 
 // Redux
 import { connect } from "react-redux";
+import { clearItemFromCart } from "../../redux/shopping-cart/shopping-cart.actions";
 
-const CartPage = ({ cartItems, itemCount }) => {
+const CartPage = ({ cartItems, itemCount, clearItemFromCart }) => {
+  console.log(cartItems);
   return (
     <motion.div
       variants={routeMotion}
@@ -46,13 +48,17 @@ const CartPage = ({ cartItems, itemCount }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {cartItems.map(({ imgUrl, price, quantity }, idx) => (
+                  {cartItems.map((item, idx) => (
                     <tr key={idx}>
                       <td>
-                        <img src={imgUrl} alt="" style={{ width: "100px" }} />
+                        <img
+                          src={item.imgUrl}
+                          alt=""
+                          style={{ width: "100px" }}
+                        />
                       </td>
-                      <td>${price}</td>
-                      <td>{quantity}</td>
+                      <td>${item.price}</td>
+                      <td>{item.quantity}</td>
                       <td>100</td>
                       <td>
                         <span
@@ -62,6 +68,7 @@ const CartPage = ({ cartItems, itemCount }) => {
                             fontSize: "20px",
                             fontWeight: "bold",
                           }}
+                          onClick={() => clearItemFromCart(item)}
                         >
                           X
                         </span>
@@ -129,4 +136,9 @@ const mapStateToProps = ({ cart: { cartItems } }) => ({
     0
   ),
 });
-export default connect(mapStateToProps)(CartPage);
+
+const mapDispatchToProps = dispatch => ({
+  clearItemFromCart: item => dispatch(clearItemFromCart(item)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartPage);

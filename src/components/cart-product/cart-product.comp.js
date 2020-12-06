@@ -1,5 +1,9 @@
 import React from "react";
 
+// Redux
+import { connect } from "react-redux";
+import { clearItemFromCart } from "../../redux/shopping-cart/shopping-cart.actions";
+
 import {
   Content,
   Price,
@@ -10,7 +14,7 @@ import {
   RemoveItem,
 } from "./cart-product.styles";
 
-const CartProduct = ({ item }) => {
+const CartProduct = ({ item, clearItemFromCart }) => {
   const { productName, price, imgUrl, quantity } = item;
 
   return (
@@ -25,11 +29,15 @@ const CartProduct = ({ item }) => {
 
         <ProductImgWrapper>
           <ProductImg src={imgUrl} />
-          <RemoveItem>X</RemoveItem>
+          <RemoveItem onClick={() => clearItemFromCart(item)}>X</RemoveItem>
         </ProductImgWrapper>
       </Wrapper>
     </>
   );
 };
 
-export default CartProduct;
+const mapDispatchToProps = dispatch => ({
+  clearItemFromCart: item => dispatch(clearItemFromCart(item)),
+});
+
+export default connect(null, mapDispatchToProps)(CartProduct);
