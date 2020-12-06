@@ -13,6 +13,7 @@ import CardDropDownMenu from "../card-drop-down-menu/CardDropDownMenu";
 // Redux
 import { connect } from "react-redux";
 import { togglecartSidebar } from "../../redux/cart-menu/cart-sidebar.actions";
+import { selectCartItemsCount } from "../../redux/shopping-cart/shopping-cart.seletors";
 
 const Navbar = ({ position, showCartSidebar, itemCount }) => {
   return (
@@ -61,12 +62,9 @@ const Navbar = ({ position, showCartSidebar, itemCount }) => {
   );
 };
 
-const mapStateToProps = ({ cartSidebar: { hidden }, cart: { cartItems } }) => ({
-  hidden,
-  itemCount: cartItems.reduce(
-    (accumalatedQty, cartItem) => accumalatedQty + cartItem.quantity,
-    0
-  ),
+const mapStateToProps = state => ({
+  hidden: state.cartSidebar.hidden,
+  itemCount: selectCartItemsCount(state),
 });
 
 const mapDispatchToProps = dispatch => ({

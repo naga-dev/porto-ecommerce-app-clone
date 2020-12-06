@@ -6,6 +6,7 @@ import { Close, Sidebar, Title, Wrapper } from "./cart-sidebar.styles";
 // Redux stuff
 import { connect } from "react-redux";
 import { togglecartSidebar } from "../../redux/cart-menu/cart-sidebar.actions";
+import { selectCartItems } from "../../redux/shopping-cart/shopping-cart.seletors";
 
 // Components
 import CartProduct from "../cart-product/cart-product.comp";
@@ -53,9 +54,9 @@ const CartSidebar = ({ hideSidebar, hidden, cartItems }) => {
   );
 };
 
-const mapStateToProps = ({ cartSidebar: { hidden }, cart: { cartItems } }) => ({
-  hidden,
-  cartItems,
+const mapStateToProps = state => ({
+  hidden: state.cartSidebar.hidden,
+  cartItems: selectCartItems(state),
 });
 
 const mapDispatchToProps = dispatch => ({

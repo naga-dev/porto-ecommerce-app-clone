@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Components
 import CartProduct from "../../components/cart-product/cart-product.comp";
@@ -17,9 +18,12 @@ import { motion } from "framer-motion";
 
 // Redux
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import {
+  selectCartItems,
+  selectCartItemsTotal,
+} from "../../redux/shopping-cart/shopping-cart.seletors";
 
-const Checkout = ({ cartItems }) => {
+const Checkout = ({ cartItems, cartItemsTotal }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -84,23 +88,24 @@ const Checkout = ({ cartItems }) => {
 
           {cartItems.length < 1 ? (
             <h4 style={{ marginBottom: "20px" }}>
-              No item to compelete checkout processded,{" "}
+              No item to compelete checkout process,{" "}
               <Link to="/shop">Continue Shopping</Link>
             </h4>
           ) : (
             cartItems.map(item => <CartProduct key={item.id} item={item} />)
           )}
 
-          <CartTotal>Total: ${!cartItems.lenght ? "0.00" : "400"}</CartTotal>
+          <CartTotal>Total: ${cartItemsTotal}.00</CartTotal>
         </motion.div>
       </Wrapper>
     </motion.div>
   );
 };
 
-const mapStateToProps = ({ cartSidebar: { hidden }, cart: { cartItems } }) => ({
-  hidden,
-  cartItems,
+const mapStateToProps = state => ({
+  hidden: state.cartSidebar.hidden,
+  cartItems: selectCartItems(state),
+  cartItemsTotal: selectCartItemsTotal(state),
 });
 
 export default connect(mapStateToProps)(Checkout);

@@ -11,14 +11,16 @@ import {
 } from "./cart-product.styles";
 
 const CartProduct = ({ item }) => {
-  const { productName, price, imgUrl } = item;
+  const { productName, price, imgUrl, quantity } = item;
 
   return (
     <>
       <Wrapper>
         <Content>
           <Title>{productName}</Title>
-          <Price>3 X ${price}</Price>
+          <Price>
+            {quantity} X ${price}
+          </Price>
         </Content>
 
         <ProductImgWrapper>
