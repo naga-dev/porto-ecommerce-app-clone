@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 
 // Firebase
@@ -20,7 +20,6 @@ import UserAccount from "./pages/UserAccount";
 import CartSidebar from "./components/cart-sidebar/cart-sidebar.comp";
 import Checkout from "./pages/checkout/checkout.comp";
 import CartPage from "./pages/cart-page/cart-page.comp";
-import { useEffect } from "react";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -66,3 +65,6 @@ function App() {
 }
 
 export default App;
+
+// TODO
+// Store cartItems in localStorage by using Persist package

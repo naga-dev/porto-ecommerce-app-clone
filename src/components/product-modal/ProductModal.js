@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 // Redux
 import { connect } from "react-redux";
 import { AddItems } from "../../redux/shopping-cart/shopping-cart.actions";
+import { createStructuredSelector } from "reselect";
+import { selectCartItemsCount } from "../../redux/shopping-cart/shopping-cart.seletors";
 
 // Assets
 import {
@@ -29,7 +31,7 @@ const modalMotion = {
   },
 };
 
-const ProductModal = ({ item, addItem, closeModal }) => {
+const ProductModal = ({ item, addItem, closeModal, itemCount, removeItem }) => {
   const { productName, price, imgUrl, secondImgUr } = item;
   console.log(item);
 
@@ -146,11 +148,6 @@ const ProductModal = ({ item, addItem, closeModal }) => {
                   className="d-flex align-center justify-between"
                   onSubmit={handleSubmit}
                 >
-                  <div className="btn-wrapper">
-                    <button className="increase-quantity">+</button>
-                    <span className="quantity">1</span>
-                    <button className="descrese-quantity">-</button>
-                  </div>
                   <button
                     className="add-to-card-btn"
                     onClick={() => addItem(item)}
@@ -187,8 +184,12 @@ const ProductModal = ({ item, addItem, closeModal }) => {
   );
 };
 
+const mapStateToProps = createStructuredSelector({
+  itemCount: selectCartItemsCount,
+});
+
 const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(AddItems(item)),
 });
 
-export default connect(null, mapDispatchToProps)(ProductModal);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductModal);

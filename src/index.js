@@ -6,7 +6,8 @@ import * as serviceWorker from "./serviceWorker";
 
 // Redux Stuff
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import { store, persistor } from "./redux/store";
+import { persistGate } from "redux-persist/integration/react";
 
 // Make a hot module replacement
 const rootEl = document.getElementById("root");
@@ -14,7 +15,9 @@ const render = () =>
   ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <persistGate persistor={persistor}>
+          <App />
+        </persistGate>
       </BrowserRouter>
     </Provider>,
     rootEl

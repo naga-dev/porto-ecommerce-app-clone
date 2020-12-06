@@ -1,4 +1,4 @@
-const addItemToCart = (cartItems, itemToAdd) => {
+export const addItemToCart = (cartItems, itemToAdd) => {
   const existingItem = cartItems.find(cartItem => cartItem.id === itemToAdd.id);
 
   if (existingItem) {
@@ -11,5 +11,3 @@ const addItemToCart = (cartItems, itemToAdd) => {
 
   return [...cartItems, { ...itemToAdd, quantity: 1 }];
 };
-
-export default addItemToCart;

@@ -1,4 +1,4 @@
-import addItemToCart from "./shoping-cart.utils";
+import { addItemToCart } from "./shoping-cart.utils";
 import SHOPPING_CART_TYPES from "./shopping-cart.types";
 
 const INITIAL_STATE = {
@@ -19,6 +19,7 @@ const shoppingCartReducer = (state = INITIAL_STATE, action) => {
           cartItem => cartItem.id !== action.payload.id
         ),
       };
+
     default:
       return state;
   }
