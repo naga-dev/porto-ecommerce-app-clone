@@ -12,7 +12,7 @@ import routeMotion from "../../motion/RouteMotion";
 // Redux
 import { connect } from "react-redux";
 
-const CartPage = ({ cartItems }) => {
+const CartPage = ({ cartItems, itemCount }) => {
   return (
     <motion.div
       variants={routeMotion}
@@ -28,7 +28,7 @@ const CartPage = ({ cartItems }) => {
             <h3>
               your cart{" "}
               <span className="items-count-in-shopping-cart">
-                ({cartItems.length} items)
+                ({itemCount} items)
               </span>
             </h3>
           </div>
@@ -46,13 +46,13 @@ const CartPage = ({ cartItems }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {cartItems.map(({ imgUrl, price }, idx) => (
+                  {cartItems.map(({ imgUrl, price, quantity }, idx) => (
                     <tr key={idx}>
                       <td>
                         <img src={imgUrl} alt="" style={{ width: "100px" }} />
                       </td>
                       <td>${price}</td>
-                      <td>1</td>
+                      <td>{quantity}</td>
                       <td>100</td>
                       <td>
                         <span
@@ -124,5 +124,9 @@ const CartPage = ({ cartItems }) => {
 
 const mapStateToProps = ({ cart: { cartItems } }) => ({
   cartItems,
+  itemCount: cartItems.reduce(
+    (accumualatedQty, cartItem) => accumualatedQty + cartItem.quantity,
+    0
+  ),
 });
 export default connect(mapStateToProps)(CartPage);
