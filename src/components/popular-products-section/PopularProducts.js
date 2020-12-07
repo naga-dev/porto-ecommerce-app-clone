@@ -1,7 +1,11 @@
 import React from "react";
 
-// Dummy Data
-import POPULAR_PRODUCTS from "../../data/popular_products";
+// Redux
+import { connect } from "react-redux";
+
+// Selectors
+import { createStructuredSelector } from "reselect";
+import { selectShopItems } from "../../redux/shop/shop.selectors";
 
 // Components
 import ProductItem from "../product-item/ProductItem";
@@ -21,12 +25,12 @@ const title = {
   fontSize: "1rem",
 };
 
-const PopularProducts = () => {
+const PopularProducts = ({ shopItems }) => {
   return (
     <div className="container" style={{ marginTop: "180px" }}>
       <h3 style={title}>Popular products</h3>
       <div className="grid-content" style={wrapperStyle}>
-        {POPULAR_PRODUCTS.map(item => (
+        {shopItems.map(item => (
           <ProductItem key={item.id} item={item} {...item} />
         ))}
       </div>
@@ -34,4 +38,8 @@ const PopularProducts = () => {
   );
 };
 
-export default PopularProducts;
+const mapStateToProps = createStructuredSelector({
+  shopItems: selectShopItems,
+});
+
+export default connect(mapStateToProps)(PopularProducts);

@@ -1,18 +1,28 @@
 import React from "react";
 
-// Dummy Data
-import POPULAR_PRODUCTS from "../../data/popular_products";
+// Redux
+import { connect } from "react-redux";
+
+// Selectors
+import { createStructuredSelector } from "reselect";
+import { selectShopItems } from "../../redux/shop/shop.selectors";
+
+// Components
 import BlockColumnItem from "../block-column-item/BlockColumnItem";
 
-const BlockColumnsWrap = ({ title }) => {
+const BlockColumnsWrap = ({ shopItems, title }) => {
   return (
     <div>
       <h6>{title}</h6>
-      {POPULAR_PRODUCTS.slice(0, 3).map(item => (
+      {shopItems.slice(0, 3).map(item => (
         <BlockColumnItem key={item.id} item={item} />
       ))}
     </div>
   );
 };
 
-export default BlockColumnsWrap;
+const mapStateToProps = createStructuredSelector({
+  shopItems: selectShopItems,
+});
+
+export default connect(mapStateToProps)(BlockColumnsWrap);

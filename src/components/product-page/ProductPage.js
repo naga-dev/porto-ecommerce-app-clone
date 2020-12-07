@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 // Redux
 import { connect } from "react-redux";
 
+// Selectors
+import { createStructuredSelector } from "reselect";
+import { selectShopItems } from "../../redux/shop/shop.selectors";
+
 // Components
 import PageHeader from "../page-header/PageHeader";
 import Navbar from "../navbar/Navbar";
@@ -13,9 +17,6 @@ import ProductsBlockColumns from "../product-block-columns/ProductsBlockColumns"
 
 // Redux
 import { AddItems } from "../../redux/shopping-cart/shopping-cart.actions";
-
-// Dummy data
-import POPULAR_PRODUCTS from "../../data/popular_products";
 
 // Framer motion
 import { motion } from "framer-motion";
@@ -30,11 +31,14 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
-const ProductPage = ({ match, addItems }) => {
+const ProductPage = ({ match, addItems, shopItems }) => {
   const { params } = match;
-  const currentProduct = POPULAR_PRODUCTS.map(item => item).filter(
-    item => item.productName.toLowerCase().replace(/ /g, "-") === params.product
-  );
+  const currentProduct = shopItems
+    .map(item => item)
+    .filter(
+      item =>
+        item.productName.toLowerCase().replace(/ /g, "-") === params.product
+    );
   const { productName, imgUrl, price } = currentProduct[0];
 
   console.log(currentProduct[0]);
@@ -150,11 +154,6 @@ const ProductPage = ({ match, addItems }) => {
                 className="d-flex align-center justify-between"
                 onSubmit={e => e.preventDefault()}
               >
-                <div className="btn-wrapper">
-                  <button className="increase-quantity">+</button>
-                  <span className="quantity">1</span>
-                  <button className="descrese-quantity">-</button>
-                </div>
                 <button
                   className="add-to-card-btn"
                   onClick={() => addItems(currentProduct[0])}
@@ -189,8 +188,12 @@ const ProductPage = ({ match, addItems }) => {
   );
 };
 
+const mapStateToProps = createStructuredSelector({
+  shopItems: selectShopItems,
+});
+
 const mapDispatchToProps = dispatch => ({
   addItems: item => dispatch(AddItems(item)),
 });
 
-export default connect(null, mapDispatchToProps)(ProductPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductPage);

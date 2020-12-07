@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+// Redux
+import { connect } from "react-redux";
+
+// Selectors
+import { selectShopItems } from "../redux/shop/shop.selectors";
+import { createStructuredSelector } from "reselect";
+
 // Components
 import Navbar from "../components/navbar/Navbar";
 import PageHeader from "../components/page-header/PageHeader";
 import PageBanner from "../assets/images/shop/page-banner.jpg";
-
-// Dummy Data
-import POPULAR_PRODUCTS from "../data/popular_products";
 import ProductItem from "../components/product-item/ProductItem";
 
 // Framer motion
@@ -18,7 +22,7 @@ import routeMotion from "../motion/RouteMotion";
 import { FaMinus } from "react-icons/fa";
 import { BsFillGrid3X3GapFill, BsFillGrid1X2Fill } from "react-icons/bs";
 
-const ShopPage = () => {
+const ShopPage = ({ shopItems }) => {
   const [orderBy, setOrderBy] = useState("latest");
   const [view, setView] = useState("grid");
 
@@ -204,7 +208,7 @@ const ShopPage = () => {
           {/* Product settings */}
 
           <div className="m-t-30" style={wrapperStyle}>
-            {POPULAR_PRODUCTS.map(item => (
+            {shopItems.map(item => (
               <ProductItem key={item.id} item={item} {...item} view={view} />
             ))}
           </div>
@@ -214,4 +218,8 @@ const ShopPage = () => {
   );
 };
 
-export default ShopPage;
+const mapStateToProps = createStructuredSelector({
+  shopItems: selectShopItems,
+});
+
+export default connect(mapStateToProps)(ShopPage);

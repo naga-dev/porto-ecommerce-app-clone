@@ -41,7 +41,7 @@ const ProductItem = ({
       >
         <div
           className="product-image"
-          onMouseOver={() => setOriginalImg(false)}
+          onMouseOver={() => setOriginalImg(secondImgUr && false)}
           onMouseLeave={() => setOriginalImg(true)}
         >
           {originalImg ? (

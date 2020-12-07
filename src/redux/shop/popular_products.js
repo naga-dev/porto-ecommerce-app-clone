@@ -1,8 +1,8 @@
 const POPULAR_PRODUCTS = [
   {
     id: 1,
-    category: "headphone",
-    productName: "men cap",
+    category: "Labtop",
+    productName: "Black Labtop",
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/headphone-3.jpg",
@@ -13,8 +13,8 @@ const POPULAR_PRODUCTS = [
   },
   {
     id: 2,
-    category: "headphone",
-    productName: "men shoes",
+    category: "Shoes",
+    productName: "Black Shoes",
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-99-300x300.jpg",
@@ -26,47 +26,44 @@ const POPULAR_PRODUCTS = [
   },
   {
     id: 3,
-    category: "headphone",
-    productName: "ideapad",
+    category: "Watche",
+    productName: "Black Smart Watch",
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/product-21-300x300.jpg",
     secondImgUr:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/product-21-300x300.jpg",
-
     isHot: true,
     isDiscount: false,
   },
   {
     id: 4,
-    category: "headphone",
-    productName: "ideapad",
+    category: "Dresses",
+    productName: "Black Dress",
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-9-2-grey-300x300.jpg",
     secondImgUr:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-9-2-grey-300x300.jpg",
-
     isHot: false,
     isDiscount: false,
   },
   {
     id: 5,
-    category: "headphone",
-    productName: "ideapad",
+    category: "bag",
+    productName: "Black Bag",
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/product-89-2-300x300.jpg",
     secondImgUr:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2019/03/product-89-2-300x300.jpg",
-
     isHot: true,
     isDiscount: false,
   },
   {
     id: 6,
-    category: "headphone",
-    productName: "ideapad",
+    category: "drone",
+    productName: "Bird Eyes Drone",
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-36-300x300.jpg",
@@ -78,8 +75,8 @@ const POPULAR_PRODUCTS = [
   },
   {
     id: 7,
-    category: "headphone",
-    productName: "ideapad",
+    category: "glass",
+    productName: "Sunny Glasses",
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-48-300x300.jpg",
@@ -91,21 +88,20 @@ const POPULAR_PRODUCTS = [
   },
   {
     id: 8,
-    category: "headphone",
-    productName: "ideapad",
+    category: "sweatshirt",
+    productName: "Black Sweashirt",
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-83-2-300x300.jpg",
     secondImgUr:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-83-2-300x300.jpg",
-
     isHot: false,
     isDiscount: false,
   },
   {
     id: 9,
-    category: "headphone",
-    productName: "ideapad",
+    category: "women shoes",
+    productName: "Women Shoes",
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/shoes-2-300x300.jpg",
@@ -117,8 +113,8 @@ const POPULAR_PRODUCTS = [
   },
   {
     id: 10,
-    category: "headphone",
-    productName: "ideapad",
+    category: "women shoes",
+    productName: "Classic Women Shoes",
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/shoes-11-2-300x300.jpg",
@@ -130,27 +126,25 @@ const POPULAR_PRODUCTS = [
   },
   {
     id: 11,
-    category: "headphone",
-    productName: "ideapad",
+    category: "watch",
+    productName: "Classic Watch",
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-72-300x300.jpg",
     secondImgUr:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-72-300x300.jpg",
-
     isHot: true,
     isDiscount: false,
   },
   {
     id: 12,
-    category: "headphone",
-    productName: "ideapad",
+    category: "hat",
+    productName: "Cowboy Hat",
     price: 240,
     imgUrl:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-31-300x300.jpg",
     secondImgUr:
       "https://www.portotheme.com/wordpress/porto/shop3/wp-content/uploads/sites/22/2018/04/product-31-300x300.jpg",
-
     isHot: false,
     isDiscount: false,
   },

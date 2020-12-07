@@ -1,10 +1,16 @@
 import React from "react";
 
+// Redux
+import { connect } from "react-redux";
+
+// Selectors
+import { createStructuredSelector } from "reselect";
+import { selectShopItems } from "../../redux/shop/shop.selectors";
+
 // Components
-import POPULAR_PRODUCTS from "../../data/popular_products";
 import ProductItem from "../product-item/ProductItem";
 
-const RelatedProductsSection = () => {
+const RelatedProductsSection = ({ shopItems }) => {
   // JSS
   const wrapper = {
     margin: "30px auto",
@@ -28,12 +34,18 @@ const RelatedProductsSection = () => {
           gap: "20px",
         }}
       >
-        {POPULAR_PRODUCTS.filter((item, idx) => idx < 5).map(item => {
-          return <ProductItem {...item} item={item} />;
-        })}
+        {shopItems
+          .filter((item, idx) => idx < 5)
+          .map(item => {
+            return <ProductItem {...item} item={item} />;
+          })}
       </div>
     </div>
   );
 };
 
-export default RelatedProductsSection;
+const mapStateToProps = createStructuredSelector({
+  shopItems: selectShopItems,
+});
+
+export default connect(mapStateToProps)(RelatedProductsSection);
